@@ -5,6 +5,13 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
   <img src="Images/toolbar.png" alt="MyToolbar" />
 </h1>
 
+## Dependencies
+|Software                        |Dependency                 |
+|:-------------------------------|:--------------------------|
+|Visual Basic for Applications|Code|
+|[Extensible Markup Language (XML)](https://www.rondebruin.nl/win/s2/win001.htm)|Ribbon|
+|[Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989)|Export File|
+
 ## Functionality
 This Excel ribbon named “Server Actions” is inserted after the “Home” tab when Excel opens.  Listed below is the detailed functionality of this application and its components.  
 
@@ -66,10 +73,3 @@ These buttons have the following constraints:
 
 #### Copyright (Label)
 * The author’s name
-
-## Dependencies
-|Software                        |Dependency                 |
-|:-------------------------------|:--------------------------|
-|Visual Basic for Applications|Code|
-|[Extensible Markup Language (XML)](https://www.rondebruin.nl/win/s2/win001.htm)|Ribbon|
-|[Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989)|Export File|
