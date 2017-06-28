@@ -103,7 +103,7 @@ These buttons have the following constraints:
 ####	Refresh Lists (Button)
 * Refreshes all the dropdown values from the active table column names.
 
-<a id="user-content-visual-basic class="anchor" href="#visual-basic" aria-hidden="true"> </a>
+<a id="user-content-visual-basic" class="anchor" href="#visual-basic" aria-hidden="true"> </a>
 ####	Visual Basic (Button)
 * Opens the Visual Basic editor.
 
