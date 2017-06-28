@@ -31,10 +31,13 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
         
 <a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"> </a>
 ## Overview
-This is used for ...
-*
-*
-*
+This is used for quickly determining which servers are offline in a list.
+
+* Item 1
+
+* Item 2
+
+* Item 3
 
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
