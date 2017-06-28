@@ -13,7 +13,22 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
     - <a href="#format-data-table">Format Data Table</a>
         - <a href="#paste">Format as Table</a>
         - <a href="#freeze-panes">Freeze Panes</a>
+        - <a href="#freeze-panes">Freeze Panes</a>
+    - <a href="#ping-test">Ping Test</a>
+        - <a href="#ping">Ping</a>
+        - <a href="#server-column">Server Column</a>
+        - <a href="#ping-column">Ping Column</a>
+    - <a href="#remote-desktop-manager">Remote Desktop Manager</a>
+        - <a href="#create-file">Create File </a>
+        - <a href="#server">Server</a>
+        - <a href="#description">Description</a>
+        - <a href="#file-name">File Name</a>
+    - <a href="#options>Options</a>
+        - <a href="#refersh-lists">Refresh Lists</a>
+        - <a href="#visual-basic">Visual Basic</a>
+    - <a href="#about">About</a>
 
+        
 <a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"> </a>
 ## Overview
 This is used for ...
