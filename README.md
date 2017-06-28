@@ -23,7 +23,7 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
         - <a href="#server">Server</a>
         - <a href="#description">Description</a>
         - <a href="#file-name">File Name</a>
-    - <a href="#options>Options</a>
+    - <a href="#options">Options</a>
         - <a href="#refersh-lists">Refresh Lists</a>
         - <a href="#visual-basic">Visual Basic</a>
     - <a href="#about">About</a>
