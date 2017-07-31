@@ -5,6 +5,10 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
   <img src="Images/toolbar.png" alt="MyToolbar" />
 </h1>
 
+<h1 align="center">
+  <img src="Images/vpaping.png" alt="vpaping" />
+</h1>
+
 ## Table of Contents
 - <a href="#overview">Overview</a>
 - <a href="#dependencies">Dependencies</a>
