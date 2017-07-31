@@ -6,7 +6,7 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
 </h1>
 
 <h1 align="center">
-  <img src="Images/vpaping.png" alt="vpaping" />
+  <img src="Images/vbaping.png" alt="vbaping" />
 </h1>
 
 ## Table of Contents
