@@ -37,7 +37,7 @@ This is used for quickly determining which servers are offline in a list.
 ## Dependencies
 |Software                        |Dependency                 |
 |:-------------------------------|:--------------------------|
-|Visual Basic for Applications|Code|
+|[Visual Basic for Applications](https://msdn.microsoft.com/en-us/vba/vba-language-reference)|Code|
 |[Extensible Markup Language (XML)](https://www.rondebruin.nl/win/s2/win001.htm)|Ribbon|
 |[Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989)|Export File|
 |[ScreenToGif](http://www.screentogif.com/)|Read Me|
