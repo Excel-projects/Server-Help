@@ -11,9 +11,9 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
 - <a href="#glossary-of-terms">Glossary of Terms</a>
 - <a href="#functionality">Functionality</a>
     - <a href="#format-data-table">Format Data Table</a>
-        - <a href="#paste">Format as Table</a>
+        - <a href="#format-as-table">Format as Table</a>
         - <a href="#freeze-panes">Freeze Panes</a>
-        - <a href="#freeze-panes">Freeze Panes</a>
+        - <a href="#remove-duplicates">Remove Duplicates</a>
     - <a href="#ping-test">Ping Test</a>
         - <a href="#ping">Ping</a>
         - <a href="#server-column">Server Column</a>
@@ -24,7 +24,7 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
         - <a href="#description">Description</a>
         - <a href="#file-name">File Name</a>
     - <a href="#options">Options</a>
-        - <a href="#refersh-lists">Refresh Lists</a>
+        - <a href="#refresh-lists">Refresh Lists</a>
         - <a href="#visual-basic">Visual Basic</a>
     - <a href="#about">About</a>
 
