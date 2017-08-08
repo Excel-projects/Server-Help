@@ -1,11 +1,6 @@
 [<img align="left" src="Images/ReadMe/Excel.png" width="64px" >](https://github.com/aduguid/ServerActions/blob/master/ServerActions.xlsm?raw=true "Download File")
 # Server Actions
 This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager.
-
-<h1 align="center">
-  <img src="Images/toolbar.png" alt="MyToolbar" />
-</h1>
-
 <h1 align="center">
   <img src="Images/ReadMe/ServerActionsExample.gif" alt="vbaping" />
 </h1>
