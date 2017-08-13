@@ -1,12 +1,11 @@
 [<img align="left" src="Images/ReadMe/App.png" width="64px" >](https://github.com/aduguid/ServerActions/blob/master/ServerActions.xlsm?raw=true "Download File")
 # Server Actions
-This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager.
+This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list.
 <h1 align="center">
   <img src="Images/ReadMe/ServerActionsExample.gif" alt="vbaping" />
 </h1>
 
 ## Table of Contents
-- <a href="#overview">Overview</a>
 - <a href="#dependencies">Dependencies</a>
 - <a href="#glossary-of-terms">Glossary of Terms</a>
 - <a href="#functionality">Functionality</a>
@@ -28,11 +27,6 @@ This is an Excel 2010 Addin written in VBA. It allows the user to use an Excel t
         - <a href="#visual-basic">Visual Basic</a>
     - <a href="#about">About</a>
 
-        
-<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"> </a>
-## Overview
-This is used for quickly determining which servers are offline in a list.
-
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
 |Software                        |Dependency                 |
@@ -41,7 +35,7 @@ This is used for quickly determining which servers are offline in a list.
 |[Extensible Markup Language (XML)](https://www.rondebruin.nl/win/s2/win001.htm)|Ribbon|
 |[Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989)|Export File|
 |[ScreenToGif](http://www.screentogif.com/)|Read Me|
-
+|[Snagit](http://discover.techsmith.com/snagit-non-brand-desktop/?gclid=CNzQiOTO09UCFVoFKgod9EIB3g)|Read Me|
 
 <a id="user-content-glossary-of-terms" class="anchor" href="#glossary-of-terms" aria-hidden="true"> </a>
 ## Glossary of Terms
