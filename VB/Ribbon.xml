@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <ribbon>
+    <tabs>
+      <tab
+		    id="tabServerActions"
+		    getLabel="GetLabelText"
+		    insertAfterMso="TabHome"
+		    >
+        <group
+          id="grpFormatDataTable"
+          label="Format Data Table"
+          imageMso="FormatAsTableGallery"
+		>
+          <gallery
+            idMso="FormatAsTableGallery"
+            size="large"
+		/>
+          <gallery
+            idMso="ViewFreezePanesGallery"
+            size="large"
+		/>
+          <button
+            idMso="RemoveDuplicates"
+            size="large"
+		/>
+
+        </group>
+        <group
+  id="grpPing"
+  label="Ping Test"
+  imageMso="SparklineLineInsert"
+		>
+          <button
+            id="btnPing"
+            label="Ping"
+            size="large"
+            onAction="addPingColumn"
+            imageMso="SparklineLineInsert"
+            screentip="This will ping the visible servers in the selected data table."
+		/>
+          <separator
+            id="separator2"
+		/>
+          <comboBox
+            id="cboServerName"
+            label="Server Column: "
+            onChange="OnChange"
+            getText="GetText"
+            getItemCount="GetItemCount"
+            getItemLabel="GetItemLabel"
+            sizeString= "XXXXXXXXXXXXXXXXXXXX"
+            screentip="This is the column name for the server column."
+		/>
+          <comboBox
+            id="cboPingName"
+            label="Ping Column: "
+            onChange="OnChange"
+            getText="GetText"
+            getItemCount="GetItemCount"
+            getItemLabel="GetItemLabel"
+            sizeString= "XXXXXXXXXXXXXXXXXXXX"
+            screentip="This is the column name for the ping column. If the column doesn't exist, it will be created."
+		/>
+        </group>
+        <group
+          id="grpRdm"
+          label="Remote Desktop Manager"
+          imageMso="QueryBuilder"
+		>
+          <button
+            id="btnCreateRdgFile"
+            label="Create File"
+            size="large"
+            onAction="CreateRdgFile"
+            imageMso="QueryBuilder"
+            screentip="This creates a Remote Desktop Manager file from the selected data table of servers."
+		/>
+          <separator
+            id="separator3"
+		/>
+          <comboBox
+            id="cboRdgServer"
+            label="Server Column: "
+            onChange="OnChange"
+            getText="GetText"
+            getItemCount="GetItemCount"
+            getItemLabel="GetItemLabel"
+            sizeString= "XXXXXXXXXXXXXXXXXXXX"
+            screentip="This is the column name for the server column."
+		/>
+          <comboBox
+            id="cboRdgDescription"
+            label="Description Column: "
+            onChange="OnChange"
+            getText="GetText"
+            getItemCount="GetItemCount"
+            getItemLabel="GetItemLabel"
+            sizeString= "XXXXXXXXXXXXXXXXXXXX"
+            screentip="This is the column name for the server description column."
+		/>
+          <editBox
+            id="txtFileName"
+            label="File Name: "
+            onChange="OnChange"
+            getText="GetText"
+            sizeString= "XXXXXXXXXXXXXXXXXXXXXX"
+            screentip="This is the file path for the Remote Desktop Manager file."
+		/>
+        </group>
+        <group
+          label="Options"
+          id="grpOptions"
+          imageMso="PropertySheet"
+		>
+          <button
+            id="btnRefreshCombobox"
+            label="Refresh Lists"
+            size="large"
+            onAction="RefreshCombobox"
+            imageMso="Refresh"
+            screentip="This will refresh all of the dropdowns in the ribbon with the selected data table column names."
+		/>
+          <button
+           id="btnSettings"
+           label="Settings"
+           onAction="OpenSettingsForm"
+           imageMso="PropertySheet"
+           size="large"
+           screentip="The settings for this Addin"
+					/>
+          <button
+						idMso="ComAddInsDialog"
+						visible="true"
+						size="large"
+					/>
+
+        </group>
+
+        <group
+					id="grpAbout"
+					label="About"
+          imageMso="Help"
+					>
+
+          <button
+            id="btnHelpAsBuilt"
+            label="How To...   "
+            onAction="OpenHelpAsBuiltFile"
+            imageMso="Help"
+            size="normal"
+            screentip="How to use this Excel Add-In"
+					/>
+          <button
+						id="btnHelpApi"
+						label="API Doc...   "
+						imageMso="CategoryCollapse"
+						size="normal"
+            enabled="false"
+						screentip="View API documentation for this product"
+					/>
+          <separator
+						id="separator4"
+					/>
+          <labelControl
+						id="lblDescription"
+						label="Add-In Name:"
+					/>
+          <labelControl
+						id="lblReleaseDate"
+						label="Release Date: "
+					/>
+          <labelControl
+						id="lblCopyright"
+						label="Copyright: "
+					/>
+          <labelControl
+						id="txtDescription"
+						getLabel="GetLabelText"
+					/>
+          <labelControl
+						id="txtReleaseDate"
+						getLabel="GetLabelText"
+					/>
+          <labelControl
+						id="txtCopyright"
+						getLabel="GetLabelText"
+					/>
+        </group>
+
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
+
