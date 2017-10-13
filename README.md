@@ -60,11 +60,11 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 * This will ping the visible servers in the active table.
 
 <a id="user-content-server-column" class="anchor" href="#server-column" aria-hidden="true"> </a>
-####	Server Column (Dropdown)
+####	Server (Dropdown)
 * A list of column names from the active table.
 
 <a id="user-content-ping-column" class="anchor" href="#ping-column" aria-hidden="true"> </a>
-####	Ping Column (Dropdown)
+####	Ping (Dropdown)
 * A list of column names from the active table. If the column doesn't exist, it will be created.
 
 <a id="user-content-remote-desktop-manager" class="anchor" href="#remote-desktop-manager" aria-hidden="true"> </a>
@@ -90,7 +90,7 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 ###	Options (Group)
 
 <a id="user-content-refresh-lists" class="anchor" href="#refresh-lists" aria-hidden="true"> </a>
-####	Refresh Lists (Button)
+####	Refresh Dropdowns (Button)
 * Refreshes all the dropdown values from the active table column names.
 
 <a id="user-content-visual-basic" class="anchor" href="#visual-basic" aria-hidden="true"> </a>
@@ -99,6 +99,14 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 <a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
 ###	About (Group)
+
+<a id="user-content-visual-basic" class="anchor" href="#how-to" aria-hidden="true"> </a>
+####	How To... (Button)
+* TODO: update here
+
+<a id="user-content-visual-basic" class="anchor" href="#report-issue" aria-hidden="true"> </a>
+####	Report Issue (Button)
+* TODO: update here
 
 #### Description (Label)
 * The application name with the version
