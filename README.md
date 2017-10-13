@@ -119,6 +119,10 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 ####	Add-In Settings (Button)
 * Opens the settings form
 
+<h1 align="left">
+  <img src="Images/ReadMe/settings_form.png" alt="settings" />
+</h1>
+
 <a id="user-content-visual-basic" class="anchor" href="#visual-basic" aria-hidden="true"> </a>
 ####	Visual Basic (Button)
 * Opens the Visual Basic editor.
