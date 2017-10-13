@@ -137,8 +137,8 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 #### Description (Label)
 * The application name with the version
 
-#### Install Date (Label)
-* The install date of the application
+#### Release Date (Label)
+* The release date of the application
 
 #### Copyright (Label)
 * The author’s name
