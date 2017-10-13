@@ -92,6 +92,14 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 ####	Description (Dropdown)
 * A list of column names from the active table.
 
+<a id="user-content-comment" class="anchor" href="#comment" aria-hidden="true"> </a>
+####	Comment (Dropdown)
+* A list of column names from the active table.
+
+<a id="user-content-group" class="anchor" href="#group" aria-hidden="true"> </a>
+####	Group (Dropdown)
+* A list of column names from the active table. This is used to group the servers in the remote desktop mananger file.
+
 <a id="user-content-file-name" class="anchor" href="#file-name" aria-hidden="true"> </a>
 ####	File Name (Textbox)
 * The file name to save the list of servers for Remote Desktop Manager.
