@@ -101,11 +101,15 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 <a id="user-content-rebuild-list" class="anchor" href="#rebuild-list" aria-hidden="true"> </a>
 ####	Rebuild Server List (Button)
-* TODO: update here
+* Rebuilds the server list from a LDAP query stored in the settings
 
 <a id="user-content-refresh-lists" class="anchor" href="#refresh-lists" aria-hidden="true"> </a>
 ####	Refresh Dropdowns (Button)
 * Refreshes all the dropdown values from the active table column names.
+
+<a id="user-content-settings" class="anchor" href="#settings" aria-hidden="true"> </a>
+####	Add-In Settings (Button)
+* Opens the settings form
 
 <a id="user-content-visual-basic" class="anchor" href="#visual-basic" aria-hidden="true"> </a>
 ####	Visual Basic (Button)
@@ -116,11 +120,11 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 <a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
 ####	How To... (Button)
-* TODO: update here
+* Opens the how to guide in a browser
 
 <a id="user-content-report-issue" class="anchor" href="#report-issue" aria-hidden="true"> </a>
 ####	Report Issue (Button)
-* TODO: update here
+* Opens the new issue page in a browser
 
 #### Description (Label)
 * The application name with the version
