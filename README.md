@@ -1,3 +1,7 @@
+<html>
+<head>
+</head>
+
 <img align="left" src="Images/ReadMe/App.png" width="64px" >
 
 # Server Actions  <span class="Application_Version">2.0.0.0</span> [<img src="Images/ReadMe/VBA.png" width="80">](https://github.com/aduguid/ServerActions/blob/master/VBA/ServerActions.xlsm?raw=true  "Download the VBA Add-In")
@@ -51,6 +55,8 @@ This is an Excel VSTO Addin written in Visual Studio Community 2017 C#/VB.NET/VB
 | Ping |Ping is a computer network administration software utility used to test the reachability of a host on an Internet Protocol (IP) network. It measures the round-trip time for messages sent from the originating host to a destination computer that are echoed back to the source. Ping operates by sending Internet Control Message Protocol (ICMP/ICMP6 ) Echo Request packets to the target host and waiting for an ICMP Echo Reply. The program reports errors, packet loss, and a statistical summary of the results, typically including the minimum, maximum, the mean round-trip times, and standard deviation of the mean. The command-line options of the ping utility and its output vary between the numerous implementations. Options may include the size of the payload, count of tests, limits for the number of network hops (TTL) that probes traverse, and interval between the requests. Many systems provide a companion utility ping6, for testing on Internet Protocol version 6 (IPv6) networks. |
 | VBA |Visual Basic for Applications (VBA) is an implementation of Microsoft's event-driven programming language Visual Basic 6 and uses the Visual Basic Runtime Library. However, VBA code normally can only run within a host application, rather than as a standalone program. VBA can, however, control one application from another using OLE Automation. VBA can use, but not create, ActiveX/COM DLLs, and later versions add support for class modules.|
 | XML |Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. The design goals of XML emphasize simplicity, generality, and usability across the Internet. It is a textual data format with strong support via Unicode for different human languages. Although the design of XML focuses on documents, the language is widely used for the representation of arbitrary data structures such as those used in web services.|
+
+<body>
 
 <a id="user-content-functionality" class="anchor" href="#functionality" aria-hidden="true"> </a>
 ## Functionality
@@ -124,3 +130,6 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 #### Copyright (Label)
 * The author’s name
+
+</body>
+</html>
