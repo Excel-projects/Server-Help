@@ -9,23 +9,25 @@ This is an Excel Addin written in VBA. It allows the user to use an Excel table 
 - <a href="#dependencies">Dependencies</a>
 - <a href="#glossary-of-terms">Glossary of Terms</a>
 - <a href="#functionality">Functionality</a>
-    - <a href="#format-data-table">Format Data Table</a>
-        - <a href="#format-as-table">Format as Table</a>
-        - <a href="#freeze-panes">Freeze Panes</a>
-        - <a href="#remove-duplicates">Remove Duplicates</a>
     - <a href="#ping-test">Ping Test</a>
-        - <a href="#ping">Ping</a>
-        - <a href="#server-column">Server Column</a>
-        - <a href="#ping-column">Ping Column</a>
+        - <a href="#ping">Ping (button)</a>
+        - <a href="#server-column">Server (dropdown)</a>
+        - <a href="#ping-column">Ping (dropdown)</a>
     - <a href="#remote-desktop-manager">Remote Desktop Manager</a>
-        - <a href="#create-file">Create File </a>
-        - <a href="#server">Server</a>
-        - <a href="#description">Description</a>
-        - <a href="#file-name">File Name</a>
+        - <a href="#create-file">Create File (button)</a>
+        - <a href="#server">Server (dropdown)</a>
+        - <a href="#description">Description (dropdown)</a>
+        - <a href="#comment">Comment (dropdown)</a>
+        - <a href="#group">Group (dropdown)</a>
+        - <a href="#file-name">File Name (textbox)</a>
     - <a href="#options">Options</a>
-        - <a href="#refresh-lists">Refresh Lists</a>
-        - <a href="#visual-basic">Visual Basic</a>
+        - <a href="#rebuild-list">Rebuild Server List (button)</a>
+        - <a href="#refresh-lists">Refresh Dropdowns (button)</a>
+        - <a href="#settings">Add-In Settings (button)</a>
+        - <a href="#visual-basic">Visual Basic (button)</a>
     - <a href="#about">About</a>
+        - <a href="#how-to">How To... (button)</a>
+        - <a href="#report-issue">Report Issue (button)</a>
 
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
@@ -49,25 +51,6 @@ This is an Excel Addin written in VBA. It allows the user to use an Excel table 
 <a id="user-content-functionality" class="anchor" href="#functionality" aria-hidden="true"> </a>
 ## Functionality
 This Excel ribbon named “Server Actions” is inserted after the “Home” tab when Excel opens.  Listed below is the detailed functionality of this application and its components.  
-
-<a id="user-content-format-data-table" class="anchor" href="#format-data-table" aria-hidden="true"> </a>
-### Format Data Table (Group)
-These buttons have the following constraints: 
-* Only runs on visible columns/rows. 
-
-<a id="user-content-format-as-table" class="anchor" href="#format-as-table" aria-hidden="true"> </a>
-####	Format as Table (Button)
-* Quickly format a range of cells and convert it to a Table by choosing a pre-defined Table Style. 
-
-<a id="user-content-freeze-panes" class="anchor" href="#freeze-panes" aria-hidden="true"> </a>
-####	Freeze Panes (Button)
-* Keep a portion of the sheet visible while the rest of the sheet scrolls
-* Defaults to invisible from the install
-
-<a id="user-content-remove-duplicates" class="anchor" href="#remove-duplicates" aria-hidden="true"> </a>
-#### Remove Duplicates (Button)
-* Delete duplicate rows from a sheet
-* Defaults to invisible from the install
 
 <a id="user-content-ping-test" class="anchor" href="#ping-test" aria-hidden="true"> </a>
 ###	Ping Test (Group)
