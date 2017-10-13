@@ -89,6 +89,10 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 <a id="user-content-options" class="anchor" href="#options" aria-hidden="true"> </a>
 ###	Options (Group)
 
+<a id="user-content-refresh-lists" class="anchor" href="#rebuild-list" aria-hidden="true"> </a>
+####	Rebuild Server List (Button)
+* TODO: update here
+
 <a id="user-content-refresh-lists" class="anchor" href="#refresh-lists" aria-hidden="true"> </a>
 ####	Refresh Dropdowns (Button)
 * Refreshes all the dropdown values from the active table column names.
