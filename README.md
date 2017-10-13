@@ -89,7 +89,7 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 <a id="user-content-options" class="anchor" href="#options" aria-hidden="true"> </a>
 ###	Options (Group)
 
-<a id="user-content-refresh-lists" class="anchor" href="#rebuild-list" aria-hidden="true"> </a>
+<a id="user-content-rebuild-list" class="anchor" href="#rebuild-list" aria-hidden="true"> </a>
 ####	Rebuild Server List (Button)
 * TODO: update here
 
@@ -104,11 +104,11 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 <a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
 ###	About (Group)
 
-<a id="user-content-visual-basic" class="anchor" href="#how-to" aria-hidden="true"> </a>
+<a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
 ####	How To... (Button)
 * TODO: update here
 
-<a id="user-content-visual-basic" class="anchor" href="#report-issue" aria-hidden="true"> </a>
+<a id="user-content-report-issue" class="anchor" href="#report-issue" aria-hidden="true"> </a>
 ####	Report Issue (Button)
 * TODO: update here
 
