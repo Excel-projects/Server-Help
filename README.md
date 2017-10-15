@@ -121,7 +121,7 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 * Opens the settings form
 
 <h1 align="left">
-  <img src="Images/ReadMe/settings_form.png" alt="settings" />
+  <img src="Images/ReadMe/settings2.0.png" alt="settings" />
 </h1>
 
 <a id="user-content-visual-basic" class="anchor" href="#visual-basic" aria-hidden="true"> </a>
