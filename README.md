@@ -67,6 +67,9 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 <a id="user-content-ping-test" class="anchor" href="#ping-test" aria-hidden="true"> </a>
 ###	Ping Test (Group)
+<h1 align="left">
+  <img src="Images/ReadMe/pingtest.png" alt="pingtest" />
+</h1>
 
 <a id="user-content-ping" class="anchor" href="#ping" aria-hidden="true"> </a>
 ####	Ping (Button)
@@ -82,6 +85,9 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 <a id="user-content-remote-desktop-manager" class="anchor" href="#remote-desktop-manager" aria-hidden="true"> </a>
 ###	Remote Desktop Manager (Group)
+<h1 align="left">
+  <img src="Images/ReadMe/rdg.png" alt="rdg" />
+</h1>
 
 <a id="user-content-create-file" class="anchor" href="#create-file" aria-hidden="true"> </a>
 ####	Create File (Button)
@@ -109,6 +115,9 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 <a id="user-content-options" class="anchor" href="#options" aria-hidden="true"> </a>
 ###	Options (Group)
+<h1 align="left">
+  <img src="Images/ReadMe/options.png" alt="options" />
+</h1>
 
 <a id="user-content-rebuild-list" class="anchor" href="#rebuild-list" aria-hidden="true"> </a>
 ####	Rebuild Server List (Button)
@@ -132,7 +141,6 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 
 <a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
 ###	About (Group)
-
 <h1 align="left">
   <img src="Images/ReadMe/about.png" alt="about" />
 </h1>
