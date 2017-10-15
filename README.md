@@ -33,7 +33,8 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
     - <a href="#about">About</a>
         - <a href="#how-to">How To... (button)</a>
         - <a href="#report-issue">Report Issue (button)</a>
-
+        - <a href="#new-version">New Version Is Available (button)</a>
+        
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
 |Software                        |Dependency                 |
@@ -137,6 +138,10 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 <a id="user-content-report-issue" class="anchor" href="#report-issue" aria-hidden="true"> </a>
 ####	Report Issue (Button)
 * Opens the new issue page in a browser
+
+<a id="user-content-new-version" class="anchor" href="#new-version" aria-hidden="true"> </a>
+####	New Version Is Available (Button)
+* This button is visible if the version of the Add-In is different from the one in the Read Me page. It will download a new version from the site.
 
 #### Description (Label)
 * The application name with the version
