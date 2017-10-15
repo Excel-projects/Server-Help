@@ -131,6 +131,10 @@ This Excel ribbon named “Server Actions” is inserted after the “Home” ta
 <a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
 ###	About (Group)
 
+<h1 align="left">
+  <img src="Images/ReadMe/about.png" alt="about" />
+</h1>
+
 <a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
 ####	How To... (Button)
 * Opens the how to guide in a browser
