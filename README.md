@@ -155,7 +155,7 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 
 <a id="user-content-new-version" class="anchor" href="#new-version" aria-hidden="true"> </a>
 ####	New Version Is Available (Button)
-* This button is visible if the version of the Add-In is different from the one in the Read Me page. It will download a new version from the site.
+* This button is visible if the version of the Add-In is different from the one in the Read Me page. It will download a new version from the site when pressed.
 
 #### Description (Label)
 * The application name with the version
