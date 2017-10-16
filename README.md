@@ -73,7 +73,7 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 
 <a id="user-content-ping" class="anchor" href="#ping" aria-hidden="true"> </a>
 ####	Ping (Button)
-* This will ping the visible servers in the active table.
+* This will create the column if it doesn't already exist and then ping the visible servers in the active table.
 
 <a id="user-content-server-column" class="anchor" href="#server-column" aria-hidden="true"> </a>
 ####	Server (Dropdown)
