@@ -15,25 +15,25 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
 - <a href="#glossary-of-terms">Glossary of Terms</a>
 - <a href="#functionality">Functionality</a>
     - <a href="#ping-test">Ping Test</a>
-        - <a href="#ping">Ping (button)</a>
-        - <a href="#server-column">Server (dropdown)</a>
-        - <a href="#ping-column">Ping (dropdown)</a>
+        - <a href="#ping">Ping</a>
+        - <a href="#server-column">Server</a>
+        - <a href="#ping-column">Ping</a>
     - <a href="#remote-desktop-manager">Remote Desktop Manager</a>
-        - <a href="#create-file">Create File (button)</a>
-        - <a href="#server">Server (dropdown)</a>
-        - <a href="#description">Description (dropdown)</a>
-        - <a href="#comment">Comment (dropdown)</a>
-        - <a href="#group">Group (dropdown)</a>
-        - <a href="#file-name">File Name (textbox)</a>
+        - <a href="#create-file">Create File</a>
+        - <a href="#server">Server</a>
+        - <a href="#description">Description</a>
+        - <a href="#comment">Comment</a>
+        - <a href="#group">Group</a>
+        - <a href="#file-name">File Name</a>
     - <a href="#options">Options</a>
-        - <a href="#rebuild-list">Rebuild Server List (button)</a>
-        - <a href="#refresh-lists">Refresh Dropdowns (button)</a>
-        - <a href="#settings">Add-In Settings (button)</a>
-        - <a href="#visual-basic">Visual Basic (button)</a>
+        - <a href="#rebuild-list">Rebuild Server List</a>
+        - <a href="#refresh-lists">Refresh Dropdowns</a>
+        - <a href="#settings">Add-In Settings</a>
+        - <a href="#visual-basic">Visual Basic</a>
     - <a href="#about">About</a>
-        - <a href="#how-to">How To... (button)</a>
-        - <a href="#report-issue">Report Issue (button)</a>
-        - <a href="#new-version">New Version Is Available (button)</a>
+        - <a href="#how-to">How To...</a>
+        - <a href="#report-issue">Report Issue</a>
+        - <a href="#new-version">New Version Is Available</a>
         
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
