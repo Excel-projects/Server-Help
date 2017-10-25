@@ -30,10 +30,14 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
         - <a href="#refresh-lists">Refresh Dropdowns</a>
         - <a href="#settings">Add-In Settings</a>
         - <a href="#visual-basic">Visual Basic</a>
-    - <a href="#about">About</a>
+    - <a href="#help">Help</a>
         - <a href="#how-to">How To...</a>
         - <a href="#report-issue">Report Issue</a>
         - <a href="#new-version">New Version Is Available</a>
+    - <a href="#about">About</a>
+        - <a href="#description">Add-in Name</a>
+        - <a href="#release-date">Release Date</a>  
+        - <a href="#copyright">Copyright</a>  
         
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
@@ -139,8 +143,8 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 ####	Visual Basic (Button)
 * Opens the Visual Basic editor.
 
-<a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
-###	About (Group)
+<a id="user-content-help" class="anchor" href="#help" aria-hidden="true"> </a>
+###	Help (Group)
 <h1 align="left">
   <img src="Images/ReadMe/about.png" alt="about" />
 </h1>
@@ -157,12 +161,18 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 ####	New Version Is Available (Button)
 * This button is visible if the version of the Add-In is different from the one in the Read Me page. It will download a new version from the site when pressed.
 
+<a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
+###	About (Group)
+
+<a id="user-content-description" class="anchor" href="#description" aria-hidden="true"> </a>
 #### Description (Label)
 * The application name with the version
 
+<a id="user-content-release-date" class="anchor" href="#release-date" aria-hidden="true"> </a>
 #### Release Date (Label)
 * The release date of the application
 
+<a id="user-content-copyright" class="anchor" href="#copyright" aria-hidden="true"> </a>
 #### Copyright (Label)
 * The author’s name
 
