@@ -72,7 +72,7 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 <a id="user-content-ping-test" class="anchor" href="#ping-test" aria-hidden="true"> </a>
 ###	Ping Test (Group)
 <h1 align="left">
-  <img src="Images/ReadMe/ribbon.group.pingtest.png" alt="pingtest" />
+  <img src="Images/ReadMe/ribbon.group.pingtest.png" alt="ping-test" />
 </h1>
 
 <a id="user-content-ping" class="anchor" href="#ping" aria-hidden="true"> </a>
@@ -90,7 +90,7 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 <a id="user-content-remote-desktop-manager" class="anchor" href="#remote-desktop-manager" aria-hidden="true"> </a>
 ###	Remote Desktop Manager (Group)
 <h1 align="left">
-  <img src="Images/ReadMe/rdg.png" alt="rdg" />
+  <img src="Images/ReadMe/ribbon.group.remotedesktopmanager.png" alt="remote-desktop-manager" />
 </h1>
 
 <a id="user-content-create-file" class="anchor" href="#create-file" aria-hidden="true"> </a>
