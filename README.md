@@ -29,7 +29,6 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
         - <a href="#rebuild-list">Rebuild Server List</a>
         - <a href="#refresh-lists">Refresh Dropdowns</a>
         - <a href="#settings">Add-In Settings</a>
-        - <a href="#visual-basic">Visual Basic</a>
     - <a href="#help">Help</a>
         - <a href="#how-to">How To...</a>
         - <a href="#report-issue">Report Issue</a>
@@ -120,7 +119,7 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 <a id="user-content-options" class="anchor" href="#options" aria-hidden="true"> </a>
 ###	Options (Group)
 <h1 align="left">
-  <img src="Images/ReadMe/options.png" alt="options" />
+  <img src="Images/ReadMe/ribbon.group.options.png" alt="options" />
 </h1>
 
 <a id="user-content-rebuild-list" class="anchor" href="#rebuild-list" aria-hidden="true"> </a>
@@ -139,14 +138,10 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
   <img src="Images/ReadMe/settings2.0.png" alt="settings" />
 </h1>
 
-<a id="user-content-visual-basic" class="anchor" href="#visual-basic" aria-hidden="true"> </a>
-####	Visual Basic (Button)
-* Opens the Visual Basic editor.
-
 <a id="user-content-help" class="anchor" href="#help" aria-hidden="true"> </a>
 ###	Help (Group)
 <h1 align="left">
-  <img src="Images/ReadMe/about.png" alt="about" />
+  <img src="Images/ReadMe/ribbon.group.help.png" alt="help" />
 </h1>
 
 <a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
@@ -163,6 +158,10 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 
 <a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
 ###	About (Group)
+
+<h1 align="left">
+  <img src="Images/ReadMe/ribbon.group.about.png" alt="about" />
+</h1>
 
 <a id="user-content-description" class="anchor" href="#description" aria-hidden="true"> </a>
 #### Description (Label)
