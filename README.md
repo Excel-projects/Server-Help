@@ -119,7 +119,7 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 <a id="user-content-options" class="anchor" href="#options" aria-hidden="true"> </a>
 ###	Options (Group)
 <h1 align="left">
-  <img src="Images/ReadMe/ribbon.group.options.png?" alt="options" />
+  <img src="Images/ReadMe/ribbon.group.options.png" alt="options" />
 </h1>
 
 <a id="user-content-rebuild-list" class="anchor" href="#rebuild-list" aria-hidden="true"> </a>
