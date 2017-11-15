@@ -76,61 +76,61 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property Ping_ServerColumn() As String
+     Global.System.Configuration.DefaultSettingValueAttribute("dNSHostname")>  _
+    Public Property Ping_ServerName() As String
         Get
-            Return CType(Me("Ping_ServerColumn"),String)
+            Return CType(Me("Ping_ServerName"),String)
         End Get
         Set
-            Me("Ping_ServerColumn") = value
+            Me("Ping_ServerName") = value
         End Set
     End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property Ping_PingColumn() As String
+     Global.System.Configuration.DefaultSettingValueAttribute("Results")>  _
+    Public Property Ping_Results() As String
         Get
-            Return CType(Me("Ping_PingColumn"),String)
+            Return CType(Me("Ping_Results"),String)
         End Get
         Set
-            Me("Ping_PingColumn") = value
+            Me("Ping_Results") = value
         End Set
     End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property Rdg_ServerColumn() As String
+     Global.System.Configuration.DefaultSettingValueAttribute("dNSHostname")>  _
+    Public Property Rdg_ServerName() As String
         Get
-            Return CType(Me("Rdg_ServerColumn"),String)
+            Return CType(Me("Rdg_ServerName"),String)
         End Get
         Set
-            Me("Rdg_ServerColumn") = value
+            Me("Rdg_ServerName") = value
         End Set
     End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property Rdg_DescriptionColumn() As String
+     Global.System.Configuration.DefaultSettingValueAttribute("CN")>  _
+    Public Property Rdg_Description() As String
         Get
-            Return CType(Me("Rdg_DescriptionColumn"),String)
+            Return CType(Me("Rdg_Description"),String)
         End Get
         Set
-            Me("Rdg_DescriptionColumn") = value
+            Me("Rdg_Description") = value
         End Set
     End Property
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-    Public Property Rdg_Filename() As String
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Temp\Test.rdg")>  _
+    Public Property Rdg_FileName() As String
         Get
-            Return CType(Me("Rdg_Filename"),String)
+            Return CType(Me("Rdg_FileName"),String)
         End Get
         Set
-            Me("Rdg_Filename") = value
+            Me("Rdg_FileName") = value
         End Set
     End Property
     
@@ -143,6 +143,80 @@ Partial Friend NotInheritable Class MySettings
         End Get
         Set
             Me("App_PathNewIssue") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("07/31/2017 12:00:00")>  _
+    Public Property App_ReleaseDate() As Date
+        Get
+            Return CType(Me("App_ReleaseDate"),Date)
+        End Get
+        Set
+            Me("App_ReleaseDate") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("OperatingSystem")>  _
+    Public Property Rdg_Comment() As String
+        Get
+            Return CType(Me("Rdg_Comment"),String)
+        End Get
+        Set
+            Me("Rdg_Comment") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("LDAP://OU=Servers,")>  _
+    Public Property Rdg_LdapPath() As String
+        Get
+            Return CType(Me("Rdg_LdapPath"),String)
+        End Get
+        Set
+            Me("Rdg_LdapPath") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("SELECT whenCreated, whenChanged, distinguishedName, OperatingSystem, OperatingSys"& _ 
+        "temVersion, dNSHostname, Name, CN FROM '[Rdg.LdapPath]' WHERE objectClass = 'com"& _ 
+        "puter'")>  _
+    Public Property Rdg_LdapQry() As String
+        Get
+            Return CType(Me("Rdg_LdapQry"),String)
+        End Get
+        Set
+            Me("Rdg_LdapQry") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("ServerType")>  _
+    Public Property Rdg_ServerGroup() As String
+        Get
+            Return CType(Me("Rdg_ServerGroup"),String)
+        End Get
+        Set
+            Me("Rdg_ServerGroup") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Servers")>  _
+    Public Property Rdg_SheetName() As String
+        Get
+            Return CType(Me("Rdg_SheetName"),String)
+        End Get
+        Set
+            Me("Rdg_SheetName") = value
         End Set
     End Property
 End Class

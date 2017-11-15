@@ -195,15 +195,15 @@ Namespace Scripts
 
                 Select Case control.Id
                     Case Is = "cboServerName"
-                        My.Settings.Ping_ServerColumn = text
+                        My.Settings.Ping_ServerName = text
                     Case Is = "cboPingName"
-                        My.Settings.Ping_PingColumn = text
+                        My.Settings.Ping_Results = text
                     Case Is = "cboRdgServer"
-                        My.Settings.Rdg_ServerColumn = text
+                        My.Settings.Rdg_ServerName = text
                     Case Is = "cboRdgDescription"
-                        My.Settings.Rdg_DescriptionColumn = text
+                        My.Settings.Rdg_Description = text
                     Case Is = "txtFileName"
-                        My.Settings.Rdg_Filename = text
+                        My.Settings.Rdg_FileName = text
                 End Select
 
 
@@ -234,8 +234,8 @@ Namespace Scripts
             Dim cellPing As Excel.Range
             Try
 
-                colServer = My.Settings.Ping_ServerColumn
-                colPing = My.Settings.Ping_PingColumn
+                colServer = My.Settings.Ping_ServerName
+                colPing = My.Settings.Ping_Results
 
                 tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject
                 If (tbl Is Nothing) Then
@@ -302,9 +302,9 @@ Namespace Scripts
             Dim Q As String
             Try
 
-                FileName = My.Settings.Rdg_Filename
-                colServer = My.Settings.Rdg_ServerColumn
-                colDesc = My.Settings.Rdg_DescriptionColumn
+                FileName = My.Settings.Rdg_FileName
+                colServer = My.Settings.Rdg_ServerName
+                colDesc = My.Settings.Rdg_Description
 
                 Q = Chr(34)
                 script = "<?xml version=" & Q & "1.0" & Q & " encoding=" & Q & "UTF-8" & Q & "?>"
