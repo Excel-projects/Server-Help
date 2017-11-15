@@ -23,5 +23,8 @@
     <Setting Name="Rdg_Filename" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="App_PathNewIssue" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/aduguid/ServerActions/issues/new</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

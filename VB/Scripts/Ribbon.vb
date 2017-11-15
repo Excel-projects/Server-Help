@@ -19,27 +19,13 @@ Namespace Scripts
 
 #Region "| Ribbon Events |"
 
-        ''' <summary>
-        ''' 
-        ''' </summary>
         Public Sub New()
         End Sub
 
-        ''' <summary>
-        ''' Loads the XML markup, either from an XML customization file or from XML markup embedded in the procedure, that customizes the Ribbon user interface.
-        ''' </summary>
-        ''' <param name="ribbonID">Represents the XML customization file</param>
-        ''' <returns>A method that returns a bitmap image for the control id.</returns>
-        ''' <remarks></remarks>
         Public Function GetCustomUI(ByVal ribbonID As String) As String Implements Office.IRibbonExtensibility.GetCustomUI
             Return GetResourceText("ServerActions.Ribbon.xml")
         End Function
 
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <param name="resourceName"></param>
-        ''' <returns></returns>
         Private Shared Function GetResourceText(ByVal resourceName As String) As String
             Dim asm As Reflection.Assembly = Reflection.Assembly.GetExecutingAssembly()
             Dim resourceNames() As String = asm.GetManifestResourceNames()
@@ -55,11 +41,6 @@ Namespace Scripts
             Return Nothing
         End Function
 
-        ''' <summary>
-        ''' Load the ribbon
-        ''' </summary>
-        ''' <param name="ribbonUI">Represents the IRibbonUI instance that is provided by the Microsoft Office application to the Ribbon extensibility code.</param>
-        ''' <remarks></remarks>
         Public Sub Ribbon_Load(ByVal ribbonUI As Office.IRibbonUI)
             Try
                 Me.ribbon = ribbonUI
@@ -71,12 +52,6 @@ Namespace Scripts
 
         End Sub
 
-        ''' <summary>
-        ''' To assign text to controls on the ribbon from the xml file
-        ''' </summary>
-        ''' <param name="control">Represents the object passed into the callback procedure of a control in a ribbon or another user interface that can be customized by using Office Fluent ribbon extensibility.</param>
-        ''' <returns>A method that returns a string for a label. </returns>
-        ''' <remarks></remarks>
         Public Function GetLabelText(ByVal control As Office.IRibbonControl) As String
             Try
                 Select Case control.Id.ToString
@@ -103,6 +78,27 @@ Namespace Scripts
                 'Console.WriteLine(ex.Message.ToString)
                 Return String.Empty
 
+            End Try
+
+        End Function
+
+        Public Function GetButtonImage(control As Office.IRibbonControl) As System.Drawing.Bitmap
+            Try
+                Select Case control.Id
+                    Case "btnPing"
+                        Return My.Resources.Resources.cmd
+                    Case "btnCloudAll"
+                        Return My.Resources.Resources.download
+                    Case "btnCreateRdgFile"
+                        Return My.Resources.Resources.rdg
+                    Case Else
+                        Return Nothing
+
+                End Select
+            Catch ex As Exception
+                ErrorHandler.DisplayMessage(ex)
+
+                Return Nothing
             End Try
 
         End Function
@@ -168,6 +164,32 @@ Namespace Scripts
 
         End Sub
 
+        Public Sub OnAction(ByVal control As Office.IRibbonControl)
+            Try
+                Select Case control.Id
+                    Case "btnPing"
+                        Call AddPingColumn()
+                    Case "btnCreateRdgFile"
+                        Call CreateRdgFile()
+                    Case "btnSettings"
+                        Call OpenSettingsForm()
+                    Case "btnRefreshServerList"
+
+                    Case "btnRefreshCombobox"
+                        Call RefreshCombobox()
+                    Case "btnOpenReadMe"
+                        Call OpenReadMe()
+                    Case "btnOpenNewIssue"
+                        Call OpenNewIssue()
+                End Select
+
+            Catch ex As Exception
+                Call ErrorHandler.DisplayMessage(ex)
+
+            End Try
+
+        End Sub
+
         Private Sub OnChange(ByVal control As Office.IRibbonControl, ByRef text As String)
             Try
 
@@ -196,7 +218,7 @@ Namespace Scripts
 
 #Region "| Ribbon Buttons |"
 
-        Public Sub AddPingColumn(ByVal control As Office.IRibbonControl)
+        Public Sub AddPingColumn()
             Dim lstCol As Excel.ListColumn
             Dim tbl As Excel.ListObject
             Dim col As Excel.ListColumn
@@ -256,7 +278,7 @@ Namespace Scripts
 
         End Sub
 
-        Public Sub CreateRdgFile(ByVal control As Office.IRibbonControl)
+        Public Sub CreateRdgFile()
             Dim lstCol As Excel.ListColumn
             Dim tbl As Excel.ListObject
             Dim col As Excel.ListColumn
@@ -349,7 +371,7 @@ Namespace Scripts
 
         End Sub
 
-        Public Sub RefreshCombobox(ByVal control As Office.IRibbonControl)
+        Public Sub RefreshCombobox()
             Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveCell.ListObject
             Try
                 If (tbl Is Nothing) Then
@@ -368,12 +390,7 @@ Namespace Scripts
 
         End Sub
 
-        ''' <summary>
-        ''' show the settings form
-        ''' </summary>
-        ''' <param name="control">Represents the object passed into the callback procedure of a control in a ribbon or another user interface that can be customized by using Office Fluent ribbon extensibility.</param>
-        ''' <remarks></remarks>
-        Public Sub OpenSettingsForm(ByVal control As Office.IRibbonControl)
+        Public Sub OpenSettingsForm()
             Try
                 If myTaskPaneSettings IsNot Nothing Then
                     If myTaskPaneSettings.Visible = True Then
@@ -398,12 +415,18 @@ Namespace Scripts
 
         End Sub
 
-        ''' <summary>
-        ''' show the read me file
-        ''' </summary>
-        ''' <param name="control">Represents the object passed into the callback procedure of a control in a ribbon or another user interface that can be customized by using Office Fluent ribbon extensibility.</param>
-        ''' <remarks></remarks>
-        Public Sub OpenHelpAsBuiltFile(ByVal control As Office.IRibbonControl)
+        Public Sub OpenNewIssue()
+            Try
+                Call OpenFile(My.Settings.App_PathNewIssue)
+
+            Catch ex As Exception
+                Call DisplayMessage(ex)
+
+            End Try
+
+        End Sub
+
+        Public Sub OpenReadMe()
             Try
                 Call OpenFile(My.Settings.App_PathReadMe)
 
