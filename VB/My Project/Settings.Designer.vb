@@ -172,7 +172,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("LDAP://OU=Servers,")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("LDAP://OU=Servers,OU=FT,DC=federationtraining,DC=edu,DC=au")>  _
     Public Property Rdg_LdapPath() As String
         Get
             Return CType(Me("Rdg_LdapPath"),String)

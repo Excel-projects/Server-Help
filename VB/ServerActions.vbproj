@@ -142,6 +142,10 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -202,8 +206,9 @@
   <ItemGroup>
     <AppDesigner Include="My Project\" />
     <Compile Include="Scripts\ErrorHandler.vb" />
-    <Compile Include="Scripts\Form.vb" />
+    <Compile Include="Scripts\AssemblyInfo.vb" />
     <Compile Include="Scripts\Ribbon.vb" />
+    <Compile Include="Scripts\Ribbon_Button.vb" />
     <Compile Include="Taskpane\Settings.Designer.vb">
       <DependentUpon>Settings.vb</DependentUpon>
     </Compile>
@@ -218,6 +223,7 @@
     </EmbeddedResource>
     <None Include="AnthonyDuguid.pfx" />
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>
     </None>
@@ -260,6 +266,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rdg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{00000205-0000-0010-8000-00AA006D2EA4}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

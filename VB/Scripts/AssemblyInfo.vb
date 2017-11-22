@@ -9,32 +9,20 @@ Imports System.Reflection
 
 Namespace Scripts
 
-	Module Form
+    Public Class AssemblyInfo
 
-        ''' <summary> 
-        ''' Set form icon
-        ''' </summary>
-        ''' <param name="currentForm">the current form object</param>
-        ''' <param name="bmp">the icon referenced for the form</param>
         Public Sub SetIcon(ByRef currentForm As System.Windows.Forms.Form, ByRef bmp As Bitmap)
             Try
                 currentForm.Icon = Icon.FromHandle(bmp.GetHicon)
 
             Catch ex As Exception
-                Call DisplayMessage(ex)
+                Call ErrorHandler.DisplayMessage(ex)
                 Exit Try
 
             End Try
 
         End Sub
 
-        ''' <summary>
-        ''' set the icon in add/remove programs
-        ''' </summary>
-        ''' <param name="iconName">The referenced icon name for the application.</param>
-        ''' <remarks>
-        ''' only run if deployed 
-        ''' </remarks>
         Public Sub SetAddRemoveProgramsIcon(iconName As String)
             If System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed AndAlso ApplicationDeployment.CurrentDeployment.IsFirstRun Then
                 Try
@@ -66,12 +54,12 @@ Namespace Scripts
                         End If
                     Next
                 Catch ex As Exception
-                    Call DisplayMessage(ex)
+                    Call ErrorHandler.DisplayMessage(ex)
                 End Try
             End If
         End Sub
 
-    End Module
+    End Class
 
 
 End Namespace
