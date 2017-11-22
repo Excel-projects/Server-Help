@@ -8,6 +8,8 @@
 This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. This has now been tested on Windows (7, 8.1, 10) & Excel (2010, 2013, 2016).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
+[![Contributors](https://img.shields.io/github/contributors/aduguid/ServerActions.svg)](https://github.com/aduguid/ServerActions/graphs/contributors)
+[![ServerActions_followed](https://img.shields.io/badge/ServerActions-followed-brightgreen.svg)](https://github.com/aduguid/ServerActions/)
 
 <h1 align="center">
   <img src="Images/ReadMe/ribbon.example.gif" alt="vbaping" />
