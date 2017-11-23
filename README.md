@@ -5,13 +5,15 @@
 <img align="left" src="Images/ReadMe/App.png" width="64px" >
 
 # Server Actions  <span class="Application_Version">2.0.0.0</span> 
+
+![current_build Office_2013](https://img.shields.io/badge/current_build-Office_2013-red.svg)
+[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
+
 This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. This has now been tested on Windows (7, 8.1, 10) & Excel (2010, 2013, 2016).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
 [![star this repo](http://githubbadges.com/star.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions)
 [![fork this repo](http://githubbadges.com/fork.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions/fork)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/aduguid/ServerActions/issues)
-[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
 
 
 <h1 align="center">
