@@ -36,6 +36,7 @@ Namespace Scripts
 
         Public Sub Ribbon_Load(ByVal ribbonUI As Office.IRibbonUI)
             Try
+                ErrorHandler.CreateLogRecord()
                 Me.ribbon = ribbonUI
                 ribbonref = Me
 
@@ -67,44 +68,46 @@ Namespace Scripts
 
         End Function
 
-        Public Sub GetItemLabel(ByVal control As Office.IRibbonControl, index As Integer, ByRef returnedVal As String)
+        Public Function GetItemLabel(control As Office.IRibbonControl, index As Integer) As String
             Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveCell.ActiveCell.ListObject
             Try
                 If (tbl Is Nothing) Or index = 0 Then
-                    returnedVal = ""
-                    Exit Sub
+                    ErrorHandler.CreateLogRecord("EMPTY")
+                    Return String.Empty
                 End If
-                returnedVal = tbl.ListColumns(index).Name
+                ErrorHandler.CreateLogRecord(tbl.ListColumns(index).Name)
+                Return tbl.ListColumns(index).Name
 
             Catch ex As Exception
                 Call ErrorHandler.DisplayMessage(ex)
-                returnedVal = "ERROR"
+                Return "ERROR"
 
             Finally
                 tbl = Nothing
 
             End Try
 
-        End Sub
+        End Function
 
-        Private Sub GetItemCount(ByVal control As Office.IRibbonControl, ByRef Count As Integer)
+        Public Function GetItemCount(control As Office.IRibbonControl) As Integer
             Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveCell.ListObject
             Try
                 If (tbl Is Nothing) Then
-                    Count = 2
+                    Return 2
                 Else
-                    Count = tbl.ListColumns.Count + 1
+                    Return tbl.ListColumns.Count + 1
                 End If
 
             Catch ex As Exception
                 Call ErrorHandler.DisplayMessage(ex)
+                Return 0
 
             Finally
                 tbl = Nothing
 
             End Try
 
-        End Sub
+        End Function
 
         Public Function GetLabelText(ByVal control As Office.IRibbonControl) As String
             Try

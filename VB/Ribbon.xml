@@ -38,7 +38,8 @@
 							size="large"
 							onAction="OnAction"
 							getImage="GetButtonImage"
-							screentip="This will ping the visible servers in the selected data table."
+							screentip="Ping Servers"
+							supertip="This will ping the visible servers in the selected data table."
 							/>
 					<separator
 							id="separator2"
@@ -51,7 +52,8 @@
 							getItemCount="GetItemCount"
 							getItemLabel="GetItemLabel"
 							sizeString= "XXXXXXXXXXXXXXXXXXXX"
-							screentip="This is the column name for the server column."
+							screentip="Server Name"
+							supertip="This is the column name for the server column."
 							/>
 					<comboBox
 							id="cboPingName"
@@ -61,7 +63,8 @@
 							getItemCount="GetItemCount"
 							getItemLabel="GetItemLabel"
 							sizeString= "XXXXXXXXXXXXXXXXXXXX"
-							screentip="This is the column name for the ping column. If the column doesn't exist, it will be created."
+							screentip="Ping Results"
+							supertip="This is the column name for the ping column. If the column doesn't exist, it will be created."
 							/>
 				</group>
 				<group
@@ -89,7 +92,8 @@
 							getItemCount="GetItemCount"
 							getItemLabel="GetItemLabel"
 							sizeString= "XXXXXXXXXXXXXXXXXXXX"
-							screentip="This is the column name for the server column."
+							screentip="Server Name"
+							supertip="This is the column name for the server column."
 							/>
 					<comboBox
 							id="cboRdgDescription"
@@ -99,7 +103,8 @@
 							getItemCount="GetItemCount"
 							getItemLabel="GetItemLabel"
 							sizeString= "XXXXXXXXXXXXXXXXXXXX"
-							screentip="This is the column name for the server description column."
+							screentip="Server Description"
+							supertip="This is the column name for the server description column."
 							/>
 					<comboBox
 							id="cboRdgComment"
@@ -109,7 +114,8 @@
 							getItemCount="GetItemCount"
 							getItemLabel="GetItemLabel"
 							sizeString= "XXXXXXXXXXXXXXXXXXXX"
-							screentip="This is the column name for the server comment column."
+							screentip="Server Comment"
+							supertip="This is the column name for the server comment column."
 							/>
 					<separator
 							id="separator4"
@@ -122,7 +128,8 @@
 							getItemCount="GetItemCount"
 							getItemLabel="GetItemLabel"
 							sizeString= "XXXXXXXXXXXXXXXXXXXX"
-							screentip="This is the column name for the server group column."
+							screentip="Server Group"
+							supertip="This is the column name for the server group column."
 							/>
 					<editBox
 							id="txtFileName"
@@ -130,7 +137,8 @@
 							onChange="OnChange"
 							getText="GetLabelText"
 							sizeString= "XXXXXXXXXXXXXXXXXXXXXX"
-							screentip="This is the file path for the Remote Desktop Manager file."
+							screentip="Find Date Format"
+							supertip="This is the file path for the Remote Desktop Manager file."
 							/>
 				</group>
 				<group 
