@@ -4,7 +4,7 @@
 
 <img align="left" src="Images/ReadMe/App.png" width="64px" >
 
-# Server Actions  <span class="Application_Version">2.0.0.0</span> [<img src="Images/ReadMe/VBA.png" width="80">](https://github.com/aduguid/ServerActions/blob/master/VBA/ServerActions.xlsm?raw=true  "Download the VBA Add-In")
+# Server Actions  <span class="Application_Version">2.0.0.0</span> 
 This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. This has now been tested on Windows (7, 8.1, 10) & Excel (2010, 2013, 2016).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
@@ -58,6 +58,7 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
 |[Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989)|Export File|VBA, VSTO|
 |[ScreenToGif](http://www.screentogif.com/)|Read Me|VBA, VSTO|
 |[Snagit](http://discover.techsmith.com/snagit-non-brand-desktop/?gclid=CNzQiOTO09UCFVoFKgod9EIB3g)|Read Me|VBA, VSTO|
+|Badges ([Library](https://shields.io/), [Custom](https://rozaxe.github.io/factory/), [Star/Fork](http://githubbadges.com))|Read Me|VBA, VSTO|
 
 <a id="user-content-glossary-of-terms" class="anchor" href="#glossary-of-terms" aria-hidden="true"> </a>
 ## Glossary of Terms
