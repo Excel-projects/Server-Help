@@ -15,8 +15,8 @@ This is an Excel Add-In written in Microsoft Visual Studio Community 2017 C#/VB.
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
 [![star this repo](http://githubbadges.com/star.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions)
 [![fork this repo](http://githubbadges.com/fork.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions/fork)
---->
 
+--->
 <h1 align="center">
   <img src="Images/ReadMe/ribbon.example.gif" alt="vbaping" />
 </h1>
@@ -25,6 +25,12 @@ This is an Excel Add-In written in Microsoft Visual Studio Community 2017 C#/VB.
 - <a href="#dependencies">Dependencies</a>
 - <a href="#glossary-of-terms">Glossary of Terms</a>
 - <a href="#functionality">Functionality</a>
+    - <a href="#ping-test">Ping Test</a>
+    - <a href="#remote-desktop-manager">Remote Desktop Manager</a>
+    - <a href="#options">Options</a>
+    - <a href="#help">Help</a>
+    - <a href="#about">About</a>
+<!---
     - <a href="#ping-test">Ping Test</a>
         - <a href="#ping">Ping (button)</a>
         - <a href="#server-column">Server</a>
@@ -48,7 +54,8 @@ This is an Excel Add-In written in Microsoft Visual Studio Community 2017 C#/VB.
         - <a href="#description">Add-in Name</a>
         - <a href="#release-date">Release Date</a>  
         - <a href="#copyright">Copyright</a>  
-        
+--->
+
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
 |Software                        |Dependency                 |Project                    |
