@@ -5,10 +5,6 @@ Imports System.Windows.Forms
 
 Namespace Scripts
 
-    ''' <summary>
-    ''' The ribbon code used for the addin
-    ''' </summary>
-    ''' <remarks></remarks>
     <Runtime.InteropServices.ComVisible(True)>
     Public Class Ribbon
         Implements Office.IRibbonExtensibility
@@ -69,8 +65,11 @@ Namespace Scripts
         End Function
 
         Public Function GetItemLabel(control As Office.IRibbonControl, index As Integer) As String
-            Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveCell.ActiveCell.ListObject
+            Dim tbl As Excel.ListObject = Nothing
             Try
+                If ErrorHandler.IsValidListObject Then
+                    tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject
+                End If
                 If (tbl Is Nothing) Or index = 0 Then
                     ErrorHandler.CreateLogRecord("EMPTY")
                     Return String.Empty
@@ -90,8 +89,11 @@ Namespace Scripts
         End Function
 
         Public Function GetItemCount(control As Office.IRibbonControl) As Integer
-            Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveCell.ListObject
+            Dim tbl As Excel.ListObject = Nothing
             Try
+                If ErrorHandler.IsValidListObject Then
+                    tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject
+                End If
                 If (tbl Is Nothing) Then
                     Return 2
                 Else
