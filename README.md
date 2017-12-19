@@ -5,23 +5,35 @@
 <img align="left" src="Images/ReadMe/App.png" width="64px" >
 
 # Server Actions  <span class="Application_Version">2.0.0.0</span> 
-This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. This has now been tested on Windows (7, 8.1, 10) & Excel (2010, 2013, 2016).
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
+![current_build Office_2013](https://img.shields.io/badge/current_build-Office_2013-red.svg)
+<!---
+[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
+--->
+This is an Excel Add-In written in Microsoft Visual Studio Community 2017 C#/VB.NET and VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. This has now been tested on Windows (7, 8.1, 10) & Excel (2010, 2013, 2016).
+<!---
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
 [![star this repo](http://githubbadges.com/star.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions)
 [![fork this repo](http://githubbadges.com/fork.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions/fork)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/aduguid/ServerActions/issues)
-[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
 
+<br>
 
+--->
 <h1 align="center">
   <img src="Images/ReadMe/ribbon.example.gif" alt="vbaping" />
 </h1>
 
 ## Table of Contents
+- <a href="#install">Install</a>
 - <a href="#dependencies">Dependencies</a>
 - <a href="#glossary-of-terms">Glossary of Terms</a>
 - <a href="#functionality">Functionality</a>
+    - <a href="#ping-test">Ping Test</a>
+    - <a href="#remote-desktop-manager">Remote Desktop Manager</a>
+    - <a href="#options">Options</a>
+    - <a href="#help">Help</a>
+    - <a href="#about">About</a>
+<!---
     - <a href="#ping-test">Ping Test</a>
         - <a href="#ping">Ping (button)</a>
         - <a href="#server-column">Server</a>
@@ -45,7 +57,30 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
         - <a href="#description">Add-in Name</a>
         - <a href="#release-date">Release Date</a>  
         - <a href="#copyright">Copyright</a>  
-        
+--->
+
+<br>
+
+<a id="user-content-install" class="anchor" href="#install" aria-hidden="true"> </a>
+## Install
+Instructions for installation of VBA and VSTO versions.
+
+### VBA
+How to install the VBA version
+1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlam?raw=true "Download the VBA Add-In").
+2. Copy the file to the XLSTART ```%AppData%\Microsoft\Excel\XLSTART\``` folder on your computer.
+3. Close all open instances of Excel and then launch Excel. The new ribbon should appear.
+
+### VSTO
+How to install the VSTO version
+1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/aduguid/ServerActions/VB/blob/master/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
+2. Download and run the setup.exe file. ```TODO: publish .NET to GitHub```
+<!---
+[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/aduguid/ServerActions/VB/blob/master/publish/setup.exe?raw=true "Download Setup.exe Install File")
+--->
+
+<br>
+
 <a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"> </a>
 ## Dependencies
 |Software                        |Dependency                 |Project                    |
@@ -60,6 +95,8 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
 |[Snagit](http://discover.techsmith.com/snagit-non-brand-desktop/?gclid=CNzQiOTO09UCFVoFKgod9EIB3g)|Read Me|VBA, VSTO|
 |Badges ([Library](https://shields.io/), [Custom](https://rozaxe.github.io/factory/), [Star/Fork](http://githubbadges.com))|Read Me|VBA, VSTO|
 
+<br>
+
 <a id="user-content-glossary-of-terms" class="anchor" href="#glossary-of-terms" aria-hidden="true"> </a>
 ## Glossary of Terms
 
@@ -72,6 +109,8 @@ This is an Excel Add-In written in Visual Studio Community 2017 C#/VB.NET and VB
 | XML |Extensible Markup Language (XML) is a markup language that defines a set of rules for encoding documents in a format that is both human-readable and machine-readable. The design goals of XML emphasize simplicity, generality, and usability across the Internet. It is a textual data format with strong support via Unicode for different human languages. Although the design of XML focuses on documents, the language is widely used for the representation of arbitrary data structures such as those used in web services.|
 
 <body>
+
+<br>
 
 <a id="user-content-functionality" class="anchor" href="#functionality" aria-hidden="true"> </a>
 ## Functionality
@@ -173,7 +212,7 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 </h1>
 
 <a id="user-content-description" class="anchor" href="#description" aria-hidden="true"> </a>
-#### Description (Label)
+#### Add-in Name (Label)
 * The application name with the version
 
 <a id="user-content-release-date" class="anchor" href="#release-date" aria-hidden="true"> </a>
