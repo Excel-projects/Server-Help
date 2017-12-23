@@ -33,7 +33,7 @@
       <Value Profile="(Default)">OperatingSystem</Value>
     </Setting>
     <Setting Name="Rdg_LdapPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">LDAP://OU=Servers,OU=FT,DC=federationtraining,DC=edu,DC=au</Value>
+      <Value Profile="(Default)">LDAP://OU=Servers,...</Value>
     </Setting>
     <Setting Name="Rdg_LdapQry" Type="System.String" Scope="User">
       <Value Profile="(Default)">SELECT whenCreated, whenChanged, distinguishedName, OperatingSystem, OperatingSystemVersion, dNSHostname, Name, CN FROM '[Rdg.LdapPath]' WHERE objectClass = 'computer'</Value>
