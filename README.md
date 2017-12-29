@@ -6,7 +6,7 @@
 
 # Server Actions  <span class="Application_Version">2.0.0.0</span> 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
-![current_build Office_2013](https://img.shields.io/badge/current_build-Office_2013-red.svg)
+[![release](http://github-release-version.herokuapp.com/github/aduguid/ServerActions/release.svg?style=flat)](https://github.com/aduguid/ServerActions/releases/latest)
 <!---
 [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
 --->
