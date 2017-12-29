@@ -9,6 +9,7 @@
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
 [![release](http://github-release-version.herokuapp.com/github/aduguid/ServerActions/release.svg?style=flat)](https://github.com/aduguid/ServerActions/releases/latest)
+
 <!---
 [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
 --->
