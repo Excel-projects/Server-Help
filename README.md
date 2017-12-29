@@ -4,7 +4,7 @@
 
 <img align="left" src="Images/ReadMe/App.png" width="64px" >
 
-# Server Actions  <span class="Application_Version">2.0.0.0</span> 
+# Server Actions
 
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
