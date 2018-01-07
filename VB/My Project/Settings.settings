@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Anthony Duguid</Value>
     </Setting>
     <Setting Name="App_PathReadMe" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://github.com/aduguid/ServerActions/blob/master/README.md</Value>
+      <Value Profile="(Default)">https://github.com/Office-projects/ServerActions/blob/master/README.md</Value>
     </Setting>
     <Setting Name="Ping_ServerName" Type="System.String" Scope="User">
       <Value Profile="(Default)">dNSHostname</Value>
@@ -24,7 +24,7 @@
       <Value Profile="(Default)">C:\Temp\Test.rdg</Value>
     </Setting>
     <Setting Name="App_PathNewIssue" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://github.com/aduguid/ServerActions/issues/new</Value>
+      <Value Profile="(Default)">https://github.com/Office-projects/ServerActions/issues/new</Value>
     </Setting>
     <Setting Name="App_ReleaseDate" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)">07/31/2017 12:00:00</Value>
@@ -33,7 +33,7 @@
       <Value Profile="(Default)">OperatingSystem</Value>
     </Setting>
     <Setting Name="Rdg_LdapPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">LDAP://OU=Servers,OU=FT,DC=federationtraining,DC=edu,DC=au</Value>
+      <Value Profile="(Default)">LDAP://OU=Servers,...</Value>
     </Setting>
     <Setting Name="Rdg_LdapQry" Type="System.String" Scope="User">
       <Value Profile="(Default)">SELECT whenCreated, whenChanged, distinguishedName, OperatingSystem, OperatingSystemVersion, dNSHostname, Name, CN FROM '[Rdg.LdapPath]' WHERE objectClass = 'computer'</Value>
