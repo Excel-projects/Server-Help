@@ -8,16 +8,16 @@
 
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © Anthony Duguid")
-[![release](http://github-release-version.herokuapp.com/github/aduguid/ServerActions/release.svg?style=flat)](https://github.com/aduguid/ServerActions/releases/latest)
+[![release](http://github-release-version.herokuapp.com/github/Office-projects/ServerActions/release.svg?style=flat)](https://github.com/Office-projects/ServerActions/releases/latest)
 
 <!---
-[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
+[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
 --->
 This is an Excel Add-In written in Microsoft Visual Studio Community 2017 C#/VB.NET and VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. This has now been tested on Windows (7, 8.1, 10) & Excel (2010, 2013, 2016).
 <!---
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
-[![star this repo](http://githubbadges.com/star.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions)
-[![fork this repo](http://githubbadges.com/fork.svg?user=aduguid&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/aduguid/ServerActions/fork)
+[![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/ServerActions)
+[![fork this repo](http://githubbadges.com/fork.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/ServerActions/fork)
 
 <br>
 
@@ -70,15 +70,15 @@ Instructions for installation of VBA and VSTO versions.
 
 ### VBA
 How to install the VBA version
-1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/aduguid/ServerActions/raw/master/VBA/ServerActions.xlam?raw=true "Download the VBA Add-In").
+1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/ServerActions/raw/master/VBA/ServerActions.xlam?raw=true "Download the VBA Add-In").
 2. Copy the file to the XLSTART folder on your computer. ```%AppData%\Microsoft\Excel\XLSTART\```
 3. Close all open instances of Excel and then launch Excel. The new ribbon should appear.
 
 ### VSTO
 How to install the VSTO version
-1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/aduguid/ServerActions/VB/blob/master/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
+1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Office-projects/ServerActions/VB/blob/master/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
 2. Download and run the setup.exe file.
-[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/aduguid/ServerActions/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
+[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Office-projects/ServerActions/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
 
 <br>
 
