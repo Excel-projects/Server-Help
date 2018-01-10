@@ -16,7 +16,7 @@
 
 :new: I'm currently working on the C# version.
 
-This Add-In allows the user to ping a list of servers and create a file for Microsoft Remote Desktop Manager from an Excel table. This is used for quickly determining which servers are offline in a list. 
+This Add-In allows the user to ping a list of servers and create a file for Microsoft Remote Desktop Manager from an Excel table. This is used for quickly determining which servers are offline in a filtered list.
 
 <!---
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
