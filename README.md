@@ -16,7 +16,8 @@
 
 :new: I'm currently working on the C# version.
 
-This is an Excel Add-In written in Microsoft Visual Studio Community 2017 C#/VB.NET and VBA. It allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. This has now been tested on Windows (7, 8.1, 10) & Excel (2010, 2013, 2016).
+This Add-In allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager. This is used for quickly determining which servers are offline in a list. 
+
 <!---
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
 [![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/ServerActions)
