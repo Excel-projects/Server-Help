@@ -204,7 +204,7 @@ VSTO
 <kbd>
 VBA
 <br>
-  <img align="left" src="Images/ReadMe/settings2.0.png" />
+  <img align="left" src="Images/ReadMe/vba.ribbon.settings.png" />
 </kbd>
 
 - VBA Settings
