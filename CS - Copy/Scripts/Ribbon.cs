@@ -213,28 +213,28 @@ namespace ServerActions.Scripts
                 switch (control.Id)
                 {
                     case "btnPing":
-                        //AddPingColumn();
+                        //Ribbon_Button.AddPingColumn();
                         break;
                     case "btnCreateRdgFile":
-                        //CreateRdgFile();
+                        //Ribbon_Button.CreateRdgFile();
                         break;
                     case "btnDownloadNewVersion":
-                        //DownloadNewVersion();
+                        //Ribbon_Button.DownloadNewVersion();
                         break;
                     case "btnOpenNewIssue":
-                        OpenNewIssue();
+                        //Ribbon_Button.OpenNewIssue();
                         break;
                     case "btnOpenReadMe":
-                        OpenReadMe();
+                        //Ribbon_Button.OpenReadMe();
                         break;
                     case "btnSettings":
-                        OpenSettings();
+                        //Ribbon_Button.OpenSettings();
                         break;
                     case "btnRefreshCombobox":
-                        //RefreshCombobox();
+                        //Ribbon_Button.RefreshCombobox();
                         break;
                     case "btnRefreshServerList":
-                        //RefreshServerList();
+                        //Ribbon_Button.RefreshServerList();
                         break;
                 }
             }
@@ -283,68 +283,6 @@ namespace ServerActions.Scripts
                 Properties.Settings.Default.Save();
                 ribbon.InvalidateControl(control.Id);
             }
-        }
-
-        #endregion
-
-        #region | Ribbon Buttons |
-
-        /// <summary> 
-        /// Opens the settings taskpane
-        /// </summary>
-        /// <remarks></remarks>
-        public void OpenSettings()
-        {
-            try
-            {
-                if (myTaskPaneSettings != null)
-                {
-                    if (myTaskPaneSettings.Visible == true)
-                    {
-                        myTaskPaneSettings.Visible = false;
-                    }
-                    else
-                    {
-                        myTaskPaneSettings.Visible = true;
-                    }
-                }
-                else
-                {
-                    mySettings = new Taskpane.Settings();
-                    myTaskPaneSettings = Globals.ThisAddIn.CustomTaskPanes.Add(mySettings, "Settings for " + Scripts.AssemblyInfo.Title);
-                    myTaskPaneSettings.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
-                    myTaskPaneSettings.DockPositionRestrict = Office.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoChange;
-                    myTaskPaneSettings.Width = 675;
-                    myTaskPaneSettings.Visible = true;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                ErrorHandler.DisplayMessage(ex);
-            }
-        }
-
-        /// <summary> 
-        /// Opens an as built help file
-        /// </summary>
-        /// <remarks></remarks>
-        public void OpenReadMe()
-        {
-            ErrorHandler.CreateLogRecord();
-            System.Diagnostics.Process.Start(Properties.Settings.Default.App_PathReadMe);
-
-        }
-
-        /// <summary> 
-        /// Opens an as built help file
-        /// </summary>
-        /// <remarks></remarks>
-        public void OpenNewIssue()
-        {
-            ErrorHandler.CreateLogRecord();
-            System.Diagnostics.Process.Start(Properties.Settings.Default.App_PathNewIssue);
-
         }
 
         #endregion

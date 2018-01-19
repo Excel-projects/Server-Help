@@ -6,8 +6,8 @@ using System.Security;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Server Actions")]
-[assembly: AssemblyDescription("Excel Addin Server Actions")]
+[assembly: AssemblyTitle("ServerActions")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Anthony Duguid")]
 [assembly: AssemblyProduct("ServerActions")]
