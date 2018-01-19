@@ -37,7 +37,7 @@ Namespace Scripts
                 ribbonref = Me
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             End Try
 
@@ -78,7 +78,7 @@ Namespace Scripts
                 Return tbl.ListColumns(index).Name
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
                 Return "ERROR"
 
             Finally
@@ -101,7 +101,7 @@ Namespace Scripts
                 End If
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
                 Return 0
 
             Finally
@@ -145,7 +145,7 @@ Namespace Scripts
                 Return String.Empty
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
                 Return String.Empty
 
             End Try
@@ -178,33 +178,33 @@ Namespace Scripts
             Try
                 Select Case control.Id
                     Case "btnPing"
-                        Call Ribbon_Button.AddPingColumn()
+                        Ribbon_Button.AddPingColumn()
 
                     Case "btnCreateRdgFile"
-                        Call Ribbon_Button.CreateRdgFile()
+                        Ribbon_Button.CreateRdgFile()
 
                     Case "btnDownloadNewVersion"
-                        Call Ribbon_Button.DownloadNewVersion()
+                        Ribbon_Button.DownloadNewVersion()
 
                     Case "btnOpenNewIssue"
-                        Call Ribbon_Button.OpenNewIssue()
+                        Ribbon_Button.OpenNewIssue()
 
                     Case "btnOpenReadMe"
-                        Call Ribbon_Button.OpenReadMe()
+                        Ribbon_Button.OpenReadMe()
 
                     Case "btnSettings"
-                        Call Ribbon_Button.OpenSettings()
+                        Ribbon_Button.OpenSettings()
 
                     Case "btnRefreshCombobox"
-                        Call Ribbon_Button.RefreshCombobox()
+                        Ribbon_Button.RefreshCombobox()
 
                     Case "btnRefreshServerList"
-                        Call Ribbon_Button.RefreshServerList()
+                        Ribbon_Button.RefreshServerList()
 
                 End Select
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             End Try
 
@@ -228,7 +228,7 @@ Namespace Scripts
 
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             End Try
 
@@ -239,7 +239,7 @@ Namespace Scripts
                 GetItem = col(key)
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
                 GetItem = Nothing
 
             End Try
@@ -259,7 +259,7 @@ Namespace Scripts
                 'ws.UsedRange 'resets the last cell reference
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             Finally
                 ws = Nothing
@@ -291,7 +291,7 @@ Namespace Scripts
                 r.Select()
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             Finally
                 tbl = Nothing
@@ -338,7 +338,7 @@ Namespace Scripts
                 Return result & " : " & Format(Now(), dateFormat)
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
                 Return "Error: " & ex.ToString()
 
             Finally
@@ -361,7 +361,7 @@ Namespace Scripts
                 Exit Try
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
                 Exit Try
 
             Finally
@@ -397,7 +397,7 @@ Namespace Scripts
                 Next
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             Finally
                 tbl = Nothing
@@ -424,7 +424,7 @@ Namespace Scripts
                 Return Nothing
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
                 Return Nothing
 
             End Try

@@ -33,7 +33,7 @@
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
-    <InstallUrl>https://raw.githubusercontent.com/aduguid/ServerActions/master/VB/publish/</InstallUrl>
+    <InstallUrl>https://github.com/Office-projects/Server-Actions/master/VB/publish/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>2.0.0.0</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
@@ -42,9 +42,9 @@
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
     <ProductName>Excel Addin Server Actions</ProductName>
     <PublisherName>Anthony Duguid</PublisherName>
-    <SupportUrl>https://github.com/aduguid/ServerActions/blob/master/README.md</SupportUrl>
+    <SupportUrl>https://github.com/Office-projects/Server-Actions/blob/master/README.md</SupportUrl>
     <FriendlyName>Excel Addin Server Actions</FriendlyName>
-    <OfficeApplicationDescription>This Add-In allows the user to use an Excel table to ping a list of servers and create a file for Microsoft Remote Desktop Manager.</OfficeApplicationDescription>
+    <OfficeApplicationDescription>This Add-In pings a list of servers from an Excel table and creates a file for Microsoft Remote Desktop Manager.</OfficeApplicationDescription>
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
   <ItemGroup>
@@ -266,11 +266,11 @@
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="ADODB">
-      <Guid>{2A75196C-D9EB-4129-B803-931327F72D5C}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>8</VersionMinor>
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>1</VersionMinor>
       <Lcid>0</Lcid>
-      <WrapperTool>primary</WrapperTool>
+      <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>

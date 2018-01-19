@@ -16,10 +16,8 @@ Namespace Scripts
             Dim lstCol As Excel.ListColumn
             Dim tbl As Excel.ListObject
             Dim col As Excel.ListColumn
-            'Dim qt As String
             Dim a As Object
             Dim c As Object
-            'Dim cc As Object
             Dim cnt As Integer
             Dim i As Integer
             Dim colServer As String
@@ -59,7 +57,7 @@ Namespace Scripts
                 Next
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             Finally
                 lstCol = Nothing
@@ -138,7 +136,7 @@ Namespace Scripts
                 System.IO.File.WriteAllText(FileName, script)
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             Finally
                 lstCol = Nothing
@@ -161,7 +159,7 @@ Namespace Scripts
                 Ribbon.InvalidateRibbon()
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             Finally
                 tbl = Nothing
@@ -189,7 +187,7 @@ Namespace Scripts
                 End If
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             End Try
 
@@ -197,10 +195,10 @@ Namespace Scripts
 
         Public Shared Sub OpenNewIssue()
             Try
-                Call Ribbon.OpenFile(My.Settings.App_PathNewIssue)
+                Ribbon.OpenFile(My.Settings.App_PathNewIssue)
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             End Try
 
@@ -208,17 +206,16 @@ Namespace Scripts
 
         Public Shared Sub OpenReadMe()
             Try
-                Call Ribbon.OpenFile(My.Settings.App_PathReadMe)
+                Ribbon.OpenFile(My.Settings.App_PathReadMe)
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             End Try
 
         End Sub
 
         Public Shared Sub RefreshServerList()
-
             Dim cn As ADODB.Connection
             Dim rs As ADODB.Recordset
             Dim cmd As ADODB.Command
@@ -265,7 +262,7 @@ Namespace Scripts
                 End If
 
                 Globals.ThisAddIn.Application.Sheets(My.Settings.Rdg_SheetName).Activate
-                Call Ribbon.ClearSheetContents()
+                Ribbon.ClearSheetContents()
                 For iCols = 0 To rs.Fields.Count - 1
                     ws.Cells(1, iCols + 1).Value = rs.Fields(iCols).Name
                 Next
@@ -287,7 +284,7 @@ Namespace Scripts
                 Ribbon.ActivateTab()
 
             Catch ex As Exception
-                Call ErrorHandler.DisplayMessage(ex)
+                ErrorHandler.DisplayMessage(ex)
 
             Finally
                 wb = Nothing
