@@ -113,7 +113,7 @@ namespace ServerActions.Scripts
                 {
                     case "btnPing":
                         return Properties.Resources.cmd;
-                    case "grpRdm":
+                    case "btnCreateRdgFile":
                         return Properties.Resources.rdg;
                     default:
                         return null;
