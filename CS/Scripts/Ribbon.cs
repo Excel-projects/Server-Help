@@ -1,12 +1,15 @@
-﻿using System;
+﻿using ADODB;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Management;
 using System.Windows.Forms;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using Office = Microsoft.Office.Core;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace ServerActions.Scripts
 {
@@ -171,9 +174,21 @@ namespace ServerActions.Scripts
         /// <returns>A method that returns an integer of total count of items used for a combobox or dropdown </returns> 
         public int GetItemCount(Office.IRibbonControl control)
         {
+            Excel.ListObject tbl = null;
             try
             {
-                return 0;
+
+                if (ErrorHandler.IsValidListObject())
+                {
+                    tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject;
+                }
+
+                if (tbl == null)
+                {
+                    return 2;
+                }
+
+                return tbl.ListColumns.Count + 1;
             }
             catch (Exception ex)
             {
@@ -190,9 +205,21 @@ namespace ServerActions.Scripts
         /// <returns>A method that returns a string per index of a combobox or dropdown </returns> 
         public string GetItemLabel(Office.IRibbonControl control, int index)
         {
+            Excel.ListObject tbl = null;
             try
             {
-                return string.Empty;
+
+                if (ErrorHandler.IsValidListObject())
+                {
+                    tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject;
+                }
+
+                if (tbl == null || index == 0)
+                {
+                    return String.Empty;
+                }
+
+                return tbl.ListColumns[index].Name;
             }
             catch (Exception ex)
             {
@@ -213,10 +240,10 @@ namespace ServerActions.Scripts
                 switch (control.Id)
                 {
                     case "btnPing":
-                        //AddPingColumn();
+                        AddPingColumn();
                         break;
                     case "btnCreateRdgFile":
-                        //CreateRdgFile();
+                        CreateRdgFile();
                         break;
                     case "btnDownloadNewVersion":
                         //DownloadNewVersion();
@@ -231,10 +258,10 @@ namespace ServerActions.Scripts
                         OpenSettings();
                         break;
                     case "btnRefreshCombobox":
-                        //RefreshCombobox();
+                        RefreshCombobox();
                         break;
                     case "btnRefreshServerList":
-                        //RefreshServerList();
+                        RefreshServerList();
                         break;
                 }
             }
@@ -288,6 +315,222 @@ namespace ServerActions.Scripts
         #endregion
 
         #region | Ribbon Buttons |
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void AddPingColumn()
+        {
+            Excel.ListColumn lstCol;
+            Excel.ListObject tbl;
+            Excel.ListColumn col;
+            object a;
+            object c;
+            int cnt;
+            int i;
+            string colServer;
+            string colPing;
+            Excel.Range cellServer;
+            Excel.Range cellPing;
+            try
+            {
+                if (ErrorHandler.IsValidListObject())
+                {
+                //lstCol = Ribbon.GetItem(tbl.ListColumns, colPing)
+                //If lstCol Is Nothing Then
+                //    lstCol = tbl.ListColumns.Add
+                //    lstCol.Name = colPing
+                //End If
+
+                //For Each col In tbl.ListColumns
+                //    If col.Name = colServer Then
+                //        a = col.DataBodyRange.Value2
+                //        For i = LBound(a) To UBound(a)
+                //            c = a(i, 1)
+                //            cellServer = col.DataBodyRange.Cells(1).Offset(i - 1, 0)
+                //            cellPing = lstCol.DataBodyRange.Cells(1).Offset(i - 1, 0)
+                //            If col.DataBodyRange.Rows(i).EntireRow.Hidden = False Then
+                //                cellPing.Value = Ribbon.GetPingResult(cellServer.Value)
+                //            End If
+                //            cnt = cnt + 1
+                //        Next
+                //    End If
+                //Next
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.DisplayMessage(ex);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void CreateRdgFile()
+        {
+            Excel.ListColumn lstCol; 
+            Excel.ListObject tbl;
+            Excel.ListColumn col;
+            Excel.Range cellServer;
+            Excel.Range cellDesc;
+            string colServer = Properties.Settings.Default.Rdg_ServerName;
+            string colDesc = Properties.Settings.Default.Rdg_Description;
+            string FileName = Properties.Settings.Default.Rdg_FileName;
+            string script = string.Empty;
+            string vbCrLf = string.Empty;
+            string Q = ((char)34).ToString();
+            object a;
+            object c;
+            int cnt;
+            int i;
+            try
+            {
+                if (ErrorHandler.IsValidListObject())
+                {
+                    script = "<?xml version=" + Q + "1.0" + Q + " encoding=" + Q + "UTF-8" + Q + "?>";
+                    script += vbCrLf + "<RDCMan programVersion=" + Q + "2.7" + Q + " schemaVersion=" + Q + "3" + Q + ">";
+                    script += vbCrLf + "<file>";
+                    script += vbCrLf + "<credentialsProfiles />";
+                    script += vbCrLf + "<properties>";
+                    script += vbCrLf + "<expanded>True</expanded>";
+                    script += vbCrLf + "<name>" + Scripts.AssemblyInfo.Title + "</name>";
+                    script += vbCrLf + "</properties>";
+
+                    //lstCol = Ribbon.GetItem(tbl.ListColumns, colDesc)
+
+                    //For Each col In tbl.ListColumns
+                    //    If col.Name = colServer Then
+                    //        a = col.DataBodyRange.Value2
+                    //        For i = LBound(a) To UBound(a)
+                    //            c = a(i, 1)
+                    //            cellServer = col.DataBodyRange.Cells(1).Offset(i - 1, 0)
+                    //            cellDesc = lstCol.DataBodyRange.Cells(1).Offset(i - 1, 0)
+                    //            If col.DataBodyRange.Rows(i).EntireRow.Hidden = False Then
+                    //                script += vbCrLf + "<server>"
+                    //                script += vbCrLf + "<properties>"
+                    //                script += vbCrLf + "<displayName>" & cellServer.Value & " (" & cellDesc.Value & ")</displayName>"
+                    //                script += vbCrLf + "<name>" & cellServer.Value & "</name>"
+                    //                script += vbCrLf + "</properties>"
+                    //                script += vbCrLf + "</server>"
+                    //            End If
+                    //            cnt = cnt + 1
+                    //        Next
+                    //    End If
+                    //Next
+                    script += vbCrLf + "</file>";
+                    script += vbCrLf + "<connected />";
+                    script += vbCrLf + "<favorites />";
+                    script += vbCrLf + "<recentlyUsed />";
+                    script += vbCrLf + "</RDCMan>";
+
+                    System.IO.File.WriteAllText(FileName, script);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.DisplayMessage(ex);
+            }
+        }
+        
+        /// <summary>
+        /// 
+        /// </summary>
+        public void RefreshServerList()
+        {
+            ADODB.Connection cn = new ADODB.Connection();
+            ADODB.Recordset rs = new ADODB.Recordset();
+            ADODB.Command cmd = new ADODB.Command();
+            Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            Excel.Worksheet ws;
+            Excel.ListObject tbl;
+            int iCols = 0;
+            string msg = String.Empty;
+            string ldapQry = Properties.Settings.Default.Rdg_LdapQry;
+            try
+            {
+                cn.Open("Provider=ADsDSOObject;");
+                ldapQry = ldapQry.Replace("[Rdg.LdapPath]", Properties.Settings.Default.Rdg_LdapPath);
+                cmd.CommandText = ldapQry;
+                cmd.ActiveConnection = cn;
+                object objRecAff = null;
+                object objParameters = null;
+                rs = cmd.Execute(out objRecAff, ref objParameters, (int)ADODB.CommandTypeEnum.adCmdText);
+
+                bool sheetExists;
+                //For Each ws In wb.Sheets
+                //    If My.Settings.Rdg_SheetName = ws.Name Then
+                //        sheetExists = True
+                //        ws.Activate()
+                //    End If
+                //Next ws
+
+                //If sheetExists = False Then
+                //    ws = wb.ActiveSheet
+                //    Dim answer As Integer
+                //    msg = "The sheet named '" & My.Settings.Rdg_SheetName & "' does not exist."
+                //    msg = msg & vbCrLf & "Would you like to use the current sheet?"
+                //    answer = MsgBox(msg, vbYesNo + vbQuestion, "Sheet Not Found")
+                //    'MessageBox.Show(msg, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                //    If answer = vbYes Then
+                //        ws = wb.ActiveSheet
+                //        My.Settings.Rdg_SheetName = wb.ActiveSheet.Name
+                //    Else
+                //        Exit Try
+                //    End If
+                //Else
+                //    ws = Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets(My.Settings.Rdg_SheetName)
+                //End If
+
+                //Globals.ThisAddIn.Application.Sheets(My.Settings.Rdg_SheetName).Activate
+                //Ribbon.ClearSheetContents()
+                //For iCols = 0 To rs.Fields.Count - 1
+                //    ws.Cells(1, iCols + 1).Value = rs.Fields(iCols).Name
+                //Next
+                //ws.Range(ws.Cells(1, 1), ws.Cells(1, rs.Fields.Count)).Font.Bold = True
+                //ws.Range("A2").CopyFromRecordset(rs)
+
+                //Ribbon.CreateTableFromRange()
+                //Ribbon.UpdateBlankCells()
+                //Ribbon.FormatDateColumns()
+
+                //'create server type column from the first 2 characters of the server name
+                //'If My.Settings.Rdg_ServerGroup = "ServerType" Then
+                //'    tbl.ListColumns.Add(3).Name = My.Settings.Rdg_ServerGroup
+                //'    tbl.ListColumns(My.Settings.Rdg_ServerGroup).DataBodyRange.FormulaR1C1 = "=UPPER(IFERROR(IF(SEARCH(""-"", [@Name]) > 0, LEFT([@Name], 2), """"), ""(NONE)""))"
+                //'    Globals.ThisAddIn.Application.Columns.AutoFit()
+                //'End If
+
+                //Ribbon.InvalidateRibbon() 'reset dropdown lists
+                //Ribbon.ActivateTab()
+
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.DisplayMessage(ex);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void RefreshCombobox()
+        {
+            try
+            {
+                if (ErrorHandler.IsValidListObject())
+                {
+                    ribbon.Invalidate();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                ErrorHandler.DisplayMessage(ex);
+            }
+        }
 
         /// <summary> 
         /// Opens the settings taskpane
@@ -344,6 +587,30 @@ namespace ServerActions.Scripts
         {
             ErrorHandler.CreateLogRecord();
             System.Diagnostics.Process.Start(Properties.Settings.Default.App_PathNewIssue);
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ShowServerStatus()
+        {
+            string FullComputerName = "<Name of Remote Computer>";
+            ConnectionOptions options = new ConnectionOptions();
+            ManagementScope scope = new ManagementScope("\\\\" + FullComputerName + "\\root\\cimv2", options);
+            scope.Connect();
+            ObjectQuery query = new ObjectQuery("SELECT * FROM Win32_TerminalService");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(scope, query);
+            ManagementObjectCollection queryCollection = searcher.Get();
+            foreach (ManagementObject queryObj in queryCollection)
+            {
+                Console.WriteLine("-----------------------------------");
+                Console.WriteLine("Win32_TerminalService instance");
+                Console.WriteLine("-----------------------------------");
+                Console.WriteLine("Started: {0}", queryObj["Started"]);
+                Console.WriteLine("State: {0}", queryObj["State"]);
+                Console.WriteLine("Status: {0}", queryObj["Status"]);
+            }
 
         }
 
