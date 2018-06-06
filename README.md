@@ -6,16 +6,16 @@
 
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © Anthony Duguid")
-[![Latest Release](https://img.shields.io/github/release/Office-projects/Server-Actions.svg?label=latest%20release)](https://github.com/Office-projects/Server-Actions/releases)
-[![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Actions/latest.svg)](https://github.com/Office-projects/Server-Actions)
+[![Latest Release](https://img.shields.io/github/release/Office-projects/Server-Help.svg?label=latest%20release)](https://github.com/Office-projects/Server-Help/releases)
+[![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Help/latest.svg)](https://github.com/Office-projects/Server-Help)
 
 <!---
 [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
 --->
 
 :new: I'm currently working on the C# version.
-<a href="https://github.com/Office-projects/Server-Actions/issues" target="_blank">
- <img alt="Issues" src="https://img.shields.io/github/issues/Office-projects/Server-Actions.svg" />
+<a href="https://github.com/Office-projects/Server-Help/issues" target="_blank">
+ <img alt="Issues" src="https://img.shields.io/github/issues/Office-projects/Server-Help.svg" />
 </a>
 
 This Add-In allows the user to ping a list of servers and creates a file for Microsoft Remote Desktop Manager from an Excel table. This is used for quickly determining which servers are offline in a list.
