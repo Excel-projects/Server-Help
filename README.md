@@ -29,7 +29,7 @@ This Add-In allows the user to ping a list of servers and creates a file for Mic
 
 --->
 <h1 align="center">
-  <img src="Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
+  <img src="https://raw.githubusercontent.com/Office-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
 </h1>
 
 ## Table of Contents
