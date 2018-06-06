@@ -10,7 +10,7 @@
 [![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Help/latest.svg)](https://github.com/Office-projects/Server-Help)
 
 <!---
-[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
+[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlsm?raw=true "Download the VBA Add-In")
 --->
 
 :new: I'm currently working on the C# version.
@@ -22,8 +22,8 @@ This Add-In allows the user to ping a list of servers and creates a file for Mic
 
 <!---
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
-[![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/ServerActions)
-[![fork this repo](http://githubbadges.com/fork.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/ServerActions/fork)
+[![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help)
+[![fork this repo](http://githubbadges.com/fork.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help/fork)
 
 <br>
 
@@ -76,15 +76,15 @@ Instructions for installation of VBA and VSTO versions.
 
 ### VBA
 How to install the VBA version
-1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/ServerActions/raw/master/VBA/ServerActions.xlam?raw=true "Download the VBA Add-In").
+1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlam?raw=true "Download the VBA Add-In").
 2. Copy the file to the XLSTART folder on your computer. ```%AppData%\Microsoft\Excel\XLSTART\```
 3. Close all open instances of Excel and then launch Excel. The new ribbon should appear.
 
 ### VSTO
 How to install the VSTO version
-1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Office-projects/ServerActions/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
+1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
 2. Download and run the setup.exe file.
-[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Office-projects/ServerActions/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
+[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
 
 <br>
 
