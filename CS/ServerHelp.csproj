@@ -19,31 +19,30 @@
       wrapped in this namespace at runtime.
   -->
   <PropertyGroup>
-    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{925B6443-C5D3-4E3C-A454-50B7C20F9364}</ProjectGuid>
+    <ProjectGuid>{49DC4E9F-F164-4B20-A834-254831D2D20B}</ProjectGuid>
     <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>ServerActions</RootNamespace>
-    <AssemblyName>ServerActions</AssemblyName>
+    <AssemblyName>ServerHelp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
-    <StartupObject>
-    </StartupObject>
     <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
-    <InstallUrl>https://github.com/Office-projects/Server-Actions/master/VB/publish/</InstallUrl>
+    <InstallUrl>https://github.com/Office-projects/Server-Help/master/CS/publish/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>2.0.0.0</ApplicationVersion>
-    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>Excel Addin Server Actions</ProductName>
+    <ProductName>Excel Addin Server Help</ProductName>
     <PublisherName>Anthony Duguid</PublisherName>
-    <SupportUrl>https://github.com/Office-projects/Server-Actions/blob/master/README.md</SupportUrl>
-    <FriendlyName>Excel Addin Server Actions</FriendlyName>
+    <SupportUrl>https://github.com/Office-projects/Server-Help/blob/master/README.md</SupportUrl>
+    <FriendlyName>Excel Addin Server Help</FriendlyName>
     <OfficeApplicationDescription>This Add-In pings a list of servers from an Excel table and creates a file for Microsoft Remote Desktop Manager.</OfficeApplicationDescription>
     <LoadBehavior>3</LoadBehavior>
   </PropertyGroup>
@@ -63,6 +62,11 @@
       <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <PropertyGroup>
     <!--
@@ -70,9 +74,6 @@
         Add-in host application
     -->
     <OfficeApplication>Excel</OfficeApplication>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Debug" configuration is selected.
@@ -91,17 +92,13 @@
       Warning level for the compiler.
   -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DefineConstants>$(DefineConstants)</DefineConstants>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <DebugType>full</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ServerActions.xml</DocumentationFile>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <!--
     This section defines properties that are set when the "Release" configuration is selected.
@@ -120,17 +117,12 @@
       Warning level for the compiler.
   -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DefineConstants>
-    </DefineConstants>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ServerActions.xml</DocumentationFile>
-    <RegisterForComInterop>false</RegisterForComInterop>
-    <RemoveIntegerChecks>false</RemoveIntegerChecks>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <!--
     This section specifies references for the project.
@@ -145,11 +137,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -176,18 +170,6 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <!-- Visual Basic supports importing namespaces (equivalent to "using" statements in C#). -->
-  <ItemGroup>
-    <Import Include="Microsoft.VisualBasic" />
-    <Import Include="System" />
-    <Import Include="System.Collections.Generic" />
-    <Import Include="System.Linq" />
-    <Import Include="System.Text" />
-    <Import Include="System.Xml.Linq" />
-    <Import Include="Office = Microsoft.Office.Core" />
-    <Import Include="Excel = Microsoft.Office.Interop.Excel" />
-    <Import Include="Microsoft.Office.Tools.Excel" />
-  </ItemGroup>
   <!--
     This section defines the user source files that are part of the project.
      
@@ -199,70 +181,53 @@
     can be found.
   -->
   <ItemGroup>
-    <AppDesigner Include="My Project\" />
-    <Compile Include="Scripts\ErrorHandler.vb" />
-    <Compile Include="Scripts\AssemblyInfo.vb" />
-    <Compile Include="Scripts\Ribbon.vb" />
-    <Compile Include="Scripts\Ribbon_Button.vb" />
-    <Compile Include="Taskpane\Settings.Designer.vb">
-      <DependentUpon>Settings.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Taskpane\Settings.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ThisAddIn.vb">
+    <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <EmbeddedResource Include="Taskpane\Settings.resx">
-      <DependentUpon>Settings.vb</DependentUpon>
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AnthonyDuguid.pfx" />
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="ThisAddIn.Designer.xml">
-      <DependentUpon>ThisAddIn.vb</DependentUpon>
-    </None>
-    <Compile Include="ThisAddIn.Designer.vb">
-      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
-    </Compile>
-    <Compile Include="My Project\AssemblyInfo.vb" />
-    <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-      <CustomToolNamespace>My.Resources</CustomToolNamespace>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="My Project\Settings.settings">
+    <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="My Project\Settings.Designer.vb">
+    <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Ribbon.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cmd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\download.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rdg.png" />
+    <Compile Include="Scripts\Ribbon.cs" />
+    <Compile Include="Scripts\AssemblyInfo.cs" />
+    <Compile Include="Scripts\ErrorHandler.cs" />
+    <Compile Include="Taskpane\Settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Taskpane\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThisAddIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.cs">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="ADODB">
@@ -275,18 +240,17 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ribbon.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\cmd.png" />
+    <Content Include="Resources\download.png" />
+    <Content Include="Resources\rdg.png" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionExplicit>On</OptionExplicit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionCompare>Binary</OptionCompare>
-  </PropertyGroup>
-  <PropertyGroup>
-    <OptionStrict>Off</OptionStrict>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -297,17 +261,17 @@
   <PropertyGroup>
     <ManifestCertificateThumbprint>93965FE7740536E96E341C481EEBCAF9BF3BD295</ManifestCertificateThumbprint>
   </PropertyGroup>
-  <!-- Include the build rules for a Visual Basic project. -->
-  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- Include the build rules for a C# project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->
   <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
   <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
-        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
-        <Host Name="Excel" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" PublishedHash="501F60F3B8BAF1916C7D50AECC5342A51A6B73BE" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" />
+        <ProjectProperties HostName="Excel" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Excel" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Excel\InstallRoot\Path#excel.exe" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Excel" GeneratedCodeNamespace="ServerActions" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
         </Host>
       </FlavorProperties>
     </VisualStudio>

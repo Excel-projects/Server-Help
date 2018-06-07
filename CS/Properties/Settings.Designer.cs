@@ -34,7 +34,7 @@ namespace ServerActions.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Office-projects/ServerActions/issues/new")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Office-projects/Server-Help/issues/new")]
         public string App_PathNewIssue {
             get {
                 return ((string)(this["App_PathNewIssue"]));
@@ -46,7 +46,7 @@ namespace ServerActions.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Office-projects/ServerActions/blob/master/README.md")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Office-projects/Server-Help/blob/master/README.md")]
         public string App_PathReadMe {
             get {
                 return ((string)(this["App_PathReadMe"]));

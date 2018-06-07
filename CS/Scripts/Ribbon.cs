@@ -523,6 +523,7 @@ namespace ServerActions.Scripts
                 if (ErrorHandler.IsValidListObject())
                 {
                     ribbon.Invalidate();
+                    ribbon.InvalidateControl("ID1");
                 }
 
             }

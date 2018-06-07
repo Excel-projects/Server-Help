@@ -9,10 +9,10 @@ Imports System.Security
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Server Actions")>
-<Assembly: AssemblyDescription("Excel Addin Server Actions")>
+<Assembly: AssemblyTitle("Server Help")>
+<Assembly: AssemblyDescription("Excel Addin Server Help")>
 <Assembly: AssemblyCompany("Anthony Duguid")>
-<Assembly: AssemblyProduct("ServerActions")>
+<Assembly: AssemblyProduct("ServerHelp")>
 <Assembly: AssemblyCopyright("Anthony Duguid")>
 <Assembly: AssemblyTrademark("")> 
 
