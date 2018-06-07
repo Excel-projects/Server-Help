@@ -2,32 +2,34 @@
 <head>
 </head>
 
-<img align="left" src="Images/ReadMe/App.png" width="64px" >
-
-# Server Actions
+<img align="left" src="Images/ReadMe/header6.png">
 
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © Anthony Duguid")
-[![release](http://github-release-version.herokuapp.com/github/Office-projects/ServerActions/release.svg?style=flat)](https://github.com/Office-projects/ServerActions/releases/latest)
+[![Latest Release](https://img.shields.io/github/release/Office-projects/Server-Help.svg?label=latest%20release)](https://github.com/Office-projects/Server-Help/releases)
+[![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Help/latest.svg)](https://github.com/Office-projects/Server-Help)
 
 <!---
-[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/ServerActions/raw/master/VBA/ServerActions.xlsm?raw=true "Download the VBA Add-In")
+[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlsm?raw=true "Download the VBA Add-In")
 --->
 
 :new: I'm currently working on the C# version.
+<a href="https://github.com/Office-projects/Server-Help/issues" target="_blank">
+ <img alt="Issues" src="https://img.shields.io/github/issues/Office-projects/Server-Help.svg" />
+</a>
 
 This Add-In allows the user to ping a list of servers and creates a file for Microsoft Remote Desktop Manager from an Excel table. This is used for quickly determining which servers are offline in a list.
 
 <!---
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
-[![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/ServerActions)
-[![fork this repo](http://githubbadges.com/fork.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/ServerActions/fork)
+[![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help)
+[![fork this repo](http://githubbadges.com/fork.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help/fork)
 
 <br>
 
 --->
 <h1 align="center">
-  <img src="Images/ReadMe/ribbon.example.gif" alt="vbaping" />
+  <img src="https://raw.githubusercontent.com/Office-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
 </h1>
 
 ## Table of Contents
@@ -74,15 +76,15 @@ Instructions for installation of VBA and VSTO versions.
 
 ### VBA
 How to install the VBA version
-1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/ServerActions/raw/master/VBA/ServerActions.xlam?raw=true "Download the VBA Add-In").
+1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlam?raw=true "Download the VBA Add-In").
 2. Copy the file to the XLSTART folder on your computer. ```%AppData%\Microsoft\Excel\XLSTART\```
 3. Close all open instances of Excel and then launch Excel. The new ribbon should appear.
 
 ### VSTO
 How to install the VSTO version
-1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Office-projects/ServerActions/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
+1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
 2. Download and run the setup.exe file.
-[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Office-projects/ServerActions/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
+[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
 
 <br>
 
