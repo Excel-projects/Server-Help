@@ -186,6 +186,18 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 ####	Refresh Dropdowns (Button)
 * Refreshes all the dropdown values from the active table column names.
 
+<a id="user-content-help" class="anchor" href="#help" aria-hidden="true"> </a>
+###	Help (Group)
+
+
+<a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
+####	How To... (Button)
+* Opens the how to guide in a browser
+
+<a id="user-content-report-issue" class="anchor" href="#report-issue" aria-hidden="true"> </a>
+####	Report Issue (Button)
+* Opens the new issue page in a browser
+
 <a id="user-content-settings" class="anchor" href="#settings" aria-hidden="true"> </a>
 ####	Add-In Settings (Button)
 * Opens the settings form/taskpane
@@ -227,22 +239,7 @@ VBA
     ```vbnet
     ThisWorkbook.CustomDocumentProperties.Item("App_ReleaseDate").Delete
     ```
-
-<a id="user-content-help" class="anchor" href="#help" aria-hidden="true"> </a>
-###	Help (Group)
-
-
-<a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
-####	How To... (Button)
-* Opens the how to guide in a browser
-
-<a id="user-content-report-issue" class="anchor" href="#report-issue" aria-hidden="true"> </a>
-####	Report Issue (Button)
-* Opens the new issue page in a browser
-
-<a id="user-content-new-version" class="anchor" href="#new-version" aria-hidden="true"> </a>
-####	New Version Is Available (Button)
-* This button is visible if the version of the Add-In is different from the one in the Read Me page. It will download a new version from the site when pressed.
+    
 
 <a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
 ###	About (Group)
