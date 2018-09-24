@@ -4,31 +4,17 @@
 
 <img align="left" src="Images/ReadMe/header6.png">
 
-This Add-In allows the user to ping a list of servers and creates a file for [Microsoft Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989) from an Excel table. This is used for quickly determining which servers are offline in a list.
+This Add-In allows the user to ping a list of servers and creates a file for [Microsoft Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989) from an Excel table. This is used for quickly determining which servers are offline in a list. :new: I'm currently working on the C# version.
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AnthonyDuguid/1.00)
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © Anthony Duguid")
 [![Latest Release](https://img.shields.io/github/release/Office-projects/Server-Help.svg?label=latest%20release)](https://github.com/Office-projects/Server-Help/releases)
 [![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Help/latest.svg)](https://github.com/Office-projects/Server-Help)
-
-<!---
-[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlsm?raw=true "Download the VBA Add-In")
---->
-
-:new: I'm currently working on the C# version.
 <a href="https://github.com/Office-projects/Server-Help/issues" target="_blank">
  <img alt="Issues" src="https://img.shields.io/github/issues/Office-projects/Server-Help.svg" />
 </a>
 
-<!---
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
-[![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help)
-[![fork this repo](http://githubbadges.com/fork.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help/fork)
-
-<br>
-
---->
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/Office-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
 </h1>
