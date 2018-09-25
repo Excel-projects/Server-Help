@@ -12,7 +12,7 @@ This Add-In allows the user to ping a list of servers and creates a file for [Mi
 [![Latest Release](https://img.shields.io/github/release/Office-projects/Server-Help.svg?label=latest%20release)](https://github.com/Office-projects/Server-Help/releases)
 [![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Help/latest.svg)](https://github.com/Office-projects/Server-Help)
 [![GitHub issues](https://img.shields.io/github/issues/Office-projects/Server-Help.svg)](https://github.com/Office-projects/Server-Help/issues)
-[![Github All Releases](https://img.shields.io/github/downloads/Office-projects/Server-Help/total.svg)](https://github.com/Office-projects/Server-Help/releases)
+<!--[![Github All Releases](https://img.shields.io/github/downloads/Office-projects/Server-Help/total.svg)](https://github.com/Office-projects/Server-Help/releases)-->
 
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/Office-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
