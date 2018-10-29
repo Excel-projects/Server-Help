@@ -9,13 +9,13 @@ This Add-In allows the user to ping a list of servers and creates a file for [Mi
 <!--[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AnthonyDuguid/1.00)-->
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © Anthony Duguid")
-[![Latest Release](https://img.shields.io/github/release/Office-projects/Server-Help.svg?label=latest%20release)](https://github.com/Office-projects/Server-Help/releases)
-[![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Help/latest.svg)](https://github.com/Office-projects/Server-Help/commits/master)
-[![GitHub issues](https://img.shields.io/github/issues/Office-projects/Server-Help.svg)](https://github.com/Office-projects/Server-Help/issues)
-<!--[![Github All Releases](https://img.shields.io/github/downloads/Office-projects/Server-Help/total.svg)](https://github.com/Office-projects/Server-Help/releases)-->
+[![Latest Release](https://img.shields.io/github/release/Excel-projects/Server-Help.svg?label=latest%20release)](https://github.com/Excel-projects/Server-Help/releases)
+[![Github commits (since latest release)](https://img.shields.io/github/commits-since/Excel-projects/Server-Help/latest.svg)](https://github.com/Excel-projects/Server-Help/commits/master)
+[![GitHub issues](https://img.shields.io/github/issues/Excel-projects/Server-Help.svg)](https://github.com/Excel-projects/Server-Help/issues)
+<!--[![Github All Releases](https://img.shields.io/github/downloads/Excel-projects/Server-Help/total.svg)](https://github.com/Excel-projects/Server-Help/releases)-->
 
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Office-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
+  <img src="https://raw.githubusercontent.com/Excel-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
 </h1>
 
 ## Table of Contents
@@ -62,15 +62,15 @@ Instructions for installation of VBA and VSTO versions.
 
 ### VBA
 How to install the VBA version
-1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlam?raw=true "Download the VBA Add-In").
+1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Excel-projects/Server-Help/raw/master/VBA/ServerHelp.xlam?raw=true "Download the VBA Add-In").
 2. Copy the file to the XLSTART folder on your computer. ```%AppData%\Microsoft\Excel\XLSTART\```
 3. Close all open instances of Excel and then launch Excel. The new ribbon should appear.
 
 ### VSTO
 How to install the VSTO version
-1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
+1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Excel-projects/Server-Help/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
 2. Download and run the setup.exe file.
-[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
+[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Excel-projects/Server-Help/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
 
 <br>
 
