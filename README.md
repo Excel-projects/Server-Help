@@ -4,32 +4,18 @@
 
 <img align="left" src="Images/ReadMe/header6.png">
 
+This Add-In allows the user to ping a list of servers and creates a file for [Microsoft Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989) from an Excel table. This is used for quickly determining which servers are offline in a list. :new: I'm currently working on the C# version.
+
+<!--[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AnthonyDuguid/1.00)-->
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © Anthony Duguid")
-[![Latest Release](https://img.shields.io/github/release/Office-projects/Server-Help.svg?label=latest%20release)](https://github.com/Office-projects/Server-Help/releases)
-[![Github commits (since latest release)](https://img.shields.io/github/commits-since/Office-projects/Server-Help/latest.svg)](https://github.com/Office-projects/Server-Help)
+[![Latest Release](https://img.shields.io/github/release/Excel-projects/Server-Help.svg?label=latest%20release)](https://github.com/Excel-projects/Server-Help/releases)
+[![Github commits (since latest release)](https://img.shields.io/github/commits-since/Excel-projects/Server-Help/latest.svg)](https://github.com/Excel-projects/Server-Help/commits/master)
+[![GitHub issues](https://img.shields.io/github/issues/Excel-projects/Server-Help.svg)](https://github.com/Excel-projects/Server-Help/issues)
+<!--[![Github All Releases](https://img.shields.io/github/downloads/Excel-projects/Server-Help/total.svg)](https://github.com/Excel-projects/Server-Help/releases)-->
 
-<!---
-[![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlsm?raw=true "Download the VBA Add-In")
---->
-
-:new: I'm currently working on the C# version.
-<a href="https://github.com/Office-projects/Server-Help/issues" target="_blank">
- <img alt="Issues" src="https://img.shields.io/github/issues/Office-projects/Server-Help.svg" />
-</a>
-
-This Add-In allows the user to ping a list of servers and creates a file for Microsoft Remote Desktop Manager from an Excel table. This is used for quickly determining which servers are offline in a list.
-
-<!---
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE "MIT License Copyright © 2017 Anthony Duguid")
-[![star this repo](http://githubbadges.com/star.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help)
-[![fork this repo](http://githubbadges.com/fork.svg?user=Office-projects&repo=ServerActions&style=flat&color=fff&background=007ec6)](http://github.com/Office-projects/Server-Help/fork)
-
-<br>
-
---->
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Office-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
+  <img src="https://raw.githubusercontent.com/Excel-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
 </h1>
 
 ## Table of Contents
@@ -76,15 +62,15 @@ Instructions for installation of VBA and VSTO versions.
 
 ### VBA
 How to install the VBA version
-1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Office-projects/Server-Help/raw/master/VBA/ServerHelp.xlam?raw=true "Download the VBA Add-In").
+1. Download the VBA Add-In file [![download VBA](https://img.shields.io/badge/download-VBA-brightgreen.svg)](https://github.com/Excel-projects/Server-Help/raw/master/VBA/ServerHelp.xlam?raw=true "Download the VBA Add-In").
 2. Copy the file to the XLSTART folder on your computer. ```%AppData%\Microsoft\Excel\XLSTART\```
 3. Close all open instances of Excel and then launch Excel. The new ribbon should appear.
 
 ### VSTO
 How to install the VSTO version
-1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
+1. Download AnthonyDuguid.pfx And Install At Root Level [![download Key](https://img.shields.io/badge/download-Key-brightgreen.svg)](https://github.com/Excel-projects/Server-Help/blob/master/VB/AnthonyDuguid.pfx?raw=true "Download AnthonyDuguid.pfx And Install At Root Level For VSTO")
 2. Download and run the setup.exe file.
-[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Office-projects/Server-Help/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
+[![download VSTO](https://img.shields.io/badge/download-VSTO-brightgreen.svg)](https://github.com/Excel-projects/Server-Help/blob/master/VB/publish/setup.exe?raw=true "Download Setup.exe Install File")
 
 <br>
 
@@ -93,7 +79,7 @@ How to install the VSTO version
 |Software                        |Dependency                 |Project                    |
 |:-------------------------------|:--------------------------|:--------------------------|
 |[Microsoft Visual Studio Community 2017](https://www.visualstudio.com/vs/whatsnew/)|Solution|VSTO|
-|[Microsoft Office Developer Tools](https://blogs.msdn.microsoft.com/visualstudio/2015/11/23/latest-microsoft-office-developer-tools-for-visual-studio-2015/)|Solution|VSTO|
+|[Microsoft Office Developer Tools](https://visualstudio.microsoft.com/vs/features/office-tools/)|Solution|VSTO|
 |[Microsoft Excel 2010 (or later)](https://www.microsoft.com/en-au/software-download/office)|Project|VBA, VSTO|
 |[Visual Basic for Applications](https://msdn.microsoft.com/en-us/vba/vba-language-reference)|Code|VBA|
 |[Extensible Markup Language (XML)](https://www.rondebruin.nl/win/s2/win001.htm)|Ribbon|VBA, VSTO|
@@ -185,6 +171,18 @@ This Excel ribbon is inserted after the “Home” tab when Excel opens. Listed 
 ####	Refresh Dropdowns (Button)
 * Refreshes all the dropdown values from the active table column names.
 
+<a id="user-content-help" class="anchor" href="#help" aria-hidden="true"> </a>
+###	Help (Group)
+
+
+<a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
+####	How To... (Button)
+* Opens the how to guide in a browser
+
+<a id="user-content-report-issue" class="anchor" href="#report-issue" aria-hidden="true"> </a>
+####	Report Issue (Button)
+* Opens the new issue page in a browser
+
 <a id="user-content-settings" class="anchor" href="#settings" aria-hidden="true"> </a>
 ####	Add-In Settings (Button)
 * Opens the settings form/taskpane
@@ -226,24 +224,7 @@ VBA
     ```vbnet
     ThisWorkbook.CustomDocumentProperties.Item("App_ReleaseDate").Delete
     ```
-
-<a id="user-content-help" class="anchor" href="#help" aria-hidden="true"> </a>
-###	Help (Group)
-<h1 align="left">
-  <img src="Images/ReadMe/ribbon.group.help.png" alt="help" />
-</h1>
-
-<a id="user-content-how-to" class="anchor" href="#how-to" aria-hidden="true"> </a>
-####	How To... (Button)
-* Opens the how to guide in a browser
-
-<a id="user-content-report-issue" class="anchor" href="#report-issue" aria-hidden="true"> </a>
-####	Report Issue (Button)
-* Opens the new issue page in a browser
-
-<a id="user-content-new-version" class="anchor" href="#new-version" aria-hidden="true"> </a>
-####	New Version Is Available (Button)
-* This button is visible if the version of the Add-In is different from the one in the Read Me page. It will download a new version from the site when pressed.
+    
 
 <a id="user-content-about" class="anchor" href="#about" aria-hidden="true"> </a>
 ###	About (Group)
