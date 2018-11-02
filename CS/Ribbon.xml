@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
 	<ribbon>
-		<qat>
-			<sharedControls >
-			<button idMso ="Copy"/>
-			</sharedControls>
-			<documentControls >
-			<button idMso="Cut"/>
-			</documentControls>
-		</qat>
 		<tabs>
 			<tab
 					id="tabServerActions"
@@ -33,7 +25,6 @@
 							idMso="RemoveDuplicates"
 							size="large"
 							/>
-
 				</group>
 				<group
 						id="grpPing"
@@ -155,15 +146,6 @@
 						imageMso="PropertySheet"
 						>
 					<button
-							id="btnSettings"
-							label="Add-In Settings"
-							onAction="OnAction"
-							imageMso="PropertySheet"
-							size="large"
-							screentip="Setting Form"
-							supertip="This opens the settings form. The settings are stored as custom properties and can be changed by double-clicking the item or using the update button."
-							/>
-					<button
 							id="btnRefreshServerList"
 							label="Rebuild Server List"
 							size="large"
@@ -191,18 +173,30 @@
 							label="How To...   "
 							onAction="OnAction"
 							imageMso="Help"
-							size="large"
+							size="normal"
 							screentip="How To..."
-							supertip="This opens the read me page from the site with detailed instructions of the Add-In functionality."
+							supertip="This opens the read me page in GitHub with detailed instructions of the Add-In functionality."
+              keytip="HLP"
 							/>
 					<button
 							id="btnOpenNewIssue"
 							label="Report Issue"
 							onAction="OnAction"
 							imageMso="MacroSecurity"
-							size="large"
+							size="normal"
 							screentip="Report An Issue"
-							supertip="This will open a new issue from the site. The user will need to login to raise an issue."
+							supertip="This will open a new issue page in GitHub. The user will need to login to raise an issue."
+              keytip="RPT"
+							/>
+					<button
+							id="btnSettings"
+							label="Settings"
+							onAction="OnAction"
+							imageMso="PropertySheet"
+							size="normal"
+							screentip="Add-In Settings Form"
+							supertip="This opens a user form with a list of custom properties stored in the file."
+              keytip="SET"
 							/>
 				</group>
 				<group

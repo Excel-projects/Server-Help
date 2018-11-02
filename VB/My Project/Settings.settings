@@ -6,7 +6,7 @@
       <Value Profile="(Default)">Anthony Duguid</Value>
     </Setting>
     <Setting Name="App_PathReadMe" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://github.com/Office-projects/Server-Help/blob/master/README.md</Value>
+      <Value Profile="(Default)">https://github.com/Excel-projects/Server-Help/blob/master/README.md</Value>
     </Setting>
     <Setting Name="Ping_ServerName" Type="System.String" Scope="User">
       <Value Profile="(Default)">dNSHostname</Value>
@@ -24,10 +24,10 @@
       <Value Profile="(Default)">C:\Temp\Test.rdg</Value>
     </Setting>
     <Setting Name="App_PathNewIssue" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://github.com/Office-projects/Server-Help/issues/new</Value>
+      <Value Profile="(Default)">https://github.com/Excel-projects/Server-Help/issues/new</Value>
     </Setting>
     <Setting Name="App_ReleaseDate" Type="System.DateTime" Scope="User">
-      <Value Profile="(Default)">07/31/2017 12:00:00</Value>
+      <Value Profile="(Default)">11/02/2018 12:00:00</Value>
     </Setting>
     <Setting Name="Rdg_Comment" Type="System.String" Scope="User">
       <Value Profile="(Default)">OperatingSystem</Value>

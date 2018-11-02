@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -26,8 +29,8 @@ namespace ServerActions.Scripts
         {
             XmlConfigurator.Configure();
             log4net.Repository.Hierarchy.Hierarchy h = (log4net.Repository.Hierarchy.Hierarchy)LogManager.GetRepository();
-            //string logFileName = System.IO.Path.Combine(Properties.Settings.Default.App_PathLocalData, AssemblyInfo.Product + ".log");
-            string logFileName = @"C:\Temp\ServerActions.log";
+            string logFileName = System.IO.Path.Combine(Properties.Settings.Default.App_PathLocalData, AssemblyInfo.Product + ".log");
+
             foreach (var a in h.Root.Appenders)
             {
                 if (a is log4net.Appender.FileAppender)
@@ -49,10 +52,20 @@ namespace ServerActions.Scripts
         {
             try
             {
-                System.Diagnostics.StackFrame sf = new System.Diagnostics.StackFrame(1);
-                System.Reflection.MethodBase caller = sf.GetMethod();
-                string currentProcedure = (caller.Name).Trim();
-                log.Info("[PROCEDURE]=|" + currentProcedure + "|[USER NAME]=|" + Environment.UserName + "|[MACHINE NAME]=|" + Environment.MachineName);
+                // gather context
+                var sf = new System.Diagnostics.StackFrame(1);
+                var caller = sf.GetMethod();
+                var currentProcedure = caller.Name.Trim();
+
+                // handle log record
+                var logMessage = string.Concat(new Dictionary<string, string>
+                {
+                    ["PROCEDURE"] = currentProcedure,
+                    ["USER NAME"] = Environment.UserName,
+                    ["MACHINE NAME"] = Environment.MachineName
+                }.Select(x => $"[{x.Key}]=|{x.Value}|"));
+                log.Info(logMessage);
+
             }
             catch (Exception ex)
             {
@@ -74,19 +87,35 @@ namespace ServerActions.Scripts
         /// <remarks></remarks>
         public static void DisplayMessage(Exception ex, Boolean isSilent = false)
         {
-            System.Diagnostics.StackFrame sf = new System.Diagnostics.StackFrame(1);
-            System.Reflection.MethodBase caller = sf.GetMethod();
-            string currentProcedure = (caller.Name).Trim();
-            string currentFileName = AssemblyInfo.GetCurrentFileName();
-            string errorMessageDescription = ex.ToString();
-            errorMessageDescription = System.Text.RegularExpressions.Regex.Replace(errorMessageDescription, @"\r\n+", " "); //the carriage returns were messing up my log file
-            string msg = "Contact your system administrator. A record has been created in the log file." + Environment.NewLine;
-            msg += "Procedure: " + currentProcedure + Environment.NewLine;
-            msg += "Description: " + ex.ToString() + Environment.NewLine;
-            log.Error("[PROCEDURE]=|" + currentProcedure + "|[USER NAME]=|" + Environment.UserName + "|[MACHINE NAME]=|" + Environment.MachineName + "|[FILE NAME]=|" + currentFileName + "|[DESCRIPTION]=|" + errorMessageDescription);
+            // gather context
+            var sf = new System.Diagnostics.StackFrame(1);
+            var caller = sf.GetMethod();
+            var errorDescription = ex.ToString().Replace("\r\n", " "); // the carriage returns were messing up my log file
+            var currentProcedure = caller.Name.Trim();
+            var currentFileName = AssemblyInfo.GetCurrentFileName();
+
+            // handle log record
+            var logMessage = string.Concat(new Dictionary<string, string>
+            {
+                ["PROCEDURE"] = currentProcedure,
+                ["USER NAME"] = Environment.UserName,
+                ["MACHINE NAME"] = Environment.MachineName,
+                ["FILE NAME"] = currentFileName,
+                ["DESCRIPTION"] = errorDescription,
+            }.Select(x => $"[{x.Key}]=|{x.Value}|"));
+            log.Error(logMessage);
+
+            // format message
+            var userMessage = new StringBuilder()
+                .AppendLine("Contact your system administrator. A record has been created in the log file.")
+                .AppendLine("Procedure: " + currentProcedure)
+                .AppendLine("Description: " + errorDescription)
+                .ToString();
+
+            // handle message
             if (isSilent == false)
             {
-                MessageBox.Show(msg, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(userMessage, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -312,6 +341,31 @@ namespace ServerActions.Scripts
                 }
             }
             return false;
+        }
+
+        /// <summary> 
+        /// Check if the object is a time     
+        /// </summary>
+        /// <param name="expression">Represents the cell value </param>
+        /// <returns>A method that returns true or false if there is a valid time </returns> 
+        /// <remarks></remarks>
+        public static bool IsTime(object expression)
+        {
+            try
+            {
+                string timeValue = Convert.ToString(expression);
+                //timeValue = String.Format("{0:" + Properties.Settings.Default.Table_ColumnFormatTime + "}", expression);
+                //timeValue = timeValue.ToString(Properties.Settings.Default.Table_ColumnFormatTime, System.Globalization.CultureInfo.InvariantCulture);
+                //timeValue = timeValue.ToString(Properties.Settings.Default.Table_ColumnFormatTime);
+                //string timeValue = expression.ToString().Format(Properties.Settings.Default.Table_ColumnFormatTime);
+                TimeSpan time1;
+                //return TimeSpan.TryParse((string)expression, out time1);
+                return TimeSpan.TryParse(timeValue, out time1);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
     }

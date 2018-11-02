@@ -34,7 +34,7 @@ namespace ServerActions.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Office-projects/Server-Help/issues/new")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Excel-projects/Server-Help/issues/new")]
         public string App_PathNewIssue {
             get {
                 return ((string)(this["App_PathNewIssue"]));
@@ -46,7 +46,7 @@ namespace ServerActions.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Office-projects/Server-Help/blob/master/README.md")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/Excel-projects/Server-Help/blob/master/README.md")]
         public string App_PathReadMe {
             get {
                 return ((string)(this["App_PathReadMe"]));
@@ -58,7 +58,7 @@ namespace ServerActions.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("07/31/2017 12:00:00")]
+        [global::System.Configuration.DefaultSettingValueAttribute("11/02/2018 12:00:00")]
         public global::System.DateTime App_ReleaseDate {
             get {
                 return ((global::System.DateTime)(this["App_ReleaseDate"]));
@@ -187,6 +187,18 @@ namespace ServerActions.Properties {
             }
             set {
                 this["Rdg_SheetName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string App_PathLocalData {
+            get {
+                return ((string)(this["App_PathLocalData"]));
+            }
+            set {
+                this["App_PathLocalData"] = value;
             }
         }
     }

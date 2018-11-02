@@ -14,6 +14,10 @@ Namespace Scripts
 
         Private Shared ReadOnly log As ILog = LogManager.GetLogger(GetType(ErrorHandler))
 
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <param name="message"></param>
         Public Shared Sub CreateLogRecord(Optional ByVal message As String = "")
             Try
                 Dim sf As New System.Diagnostics.StackFrame(1)
@@ -27,20 +31,36 @@ Namespace Scripts
 
         End Sub
 
-        Public Shared Sub DisplayMessage(ex As Exception, Optional isSilent As [Boolean] = False)
-            Dim sf As New System.Diagnostics.StackFrame(1)
-            Dim caller As System.Reflection.MethodBase = sf.GetMethod()
-            Dim currentProcedure As String = (caller.Name).Trim()
-            Dim currentFileName As String = "" 'AssemblyInfo.GetCurrentFileName()
-            Dim errorMessageDescription As String = ex.ToString()
-            errorMessageDescription = System.Text.RegularExpressions.Regex.Replace(errorMessageDescription, "\r\n+", " ")
-            Dim msg As String = "Contact your system administrator. A record has been created in the log file." + Environment.NewLine
-            msg += (Convert.ToString("Procedure: ") & currentProcedure) + Environment.NewLine
-            msg += "Description: " + ex.ToString() + Environment.NewLine
-            log.Error("[PROCEDURE]=|" + currentProcedure + "|[USER NAME]=|" + Environment.UserName + "|[MACHINE NAME]=|" + Environment.MachineName + "|[DESCRIPTION]=|" + errorMessageDescription)
-            If isSilent = False Then
-                MessageBox.Show(msg, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
+        ''' <summary>
+        ''' 
+        ''' </summary>
+        ''' <param name="ex"></param>
+        ''' <param name="isSilent"></param>
+        Public Shared Sub DisplayMessage(ex As Exception, Optional isSilent As Boolean = False)
+            Try
+                Dim sf As New System.Diagnostics.StackFrame(1)
+                Dim caller As System.Reflection.MethodBase = sf.GetMethod()
+                Dim currentProcedure As String = (caller.Name).Trim()
+                Dim currentFileName As String = "" 'AssemblyInfo.GetCurrentFileName()
+                Dim errorMessageDescription As String = ex.ToString()
+                errorMessageDescription = System.Text.RegularExpressions.Regex.Replace(errorMessageDescription, "\r\n+", " ")
+
+                Dim msg As String = "Contact your system administrator. A record has been created in the log file." + Environment.NewLine
+                msg += (Convert.ToString("Procedure: ") & currentProcedure) + Environment.NewLine
+                msg += "Description: " + ex.ToString() + Environment.NewLine
+
+                log.Error("[PROCEDURE]=|" + currentProcedure + "|[USER NAME]=|" + Environment.UserName + "|[MACHINE NAME]=|" + Environment.MachineName + "|[DESCRIPTION]=|" + errorMessageDescription)
+                If isSilent = False Then
+                    MessageBox.Show(msg, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+
+            Catch ex As Exception
+
+
+            Finally
+
+
+            End Try
 
         End Sub
 
