@@ -4,7 +4,7 @@
 
 <img align="left" src="Images/ReadMe/header6.png">
 
-This Add-In allows the user to ping a list of servers and creates a file for [Microsoft Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989) from an Excel table. This is used for quickly determining which servers are offline in a list. :new: I'm currently working on the C# version.
+This Add-In allows the user to ping a list of servers and creates a file for [Microsoft Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989) from an Excel table. This is used for quickly determining which servers are offline in a list.
 
 <!--[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/AnthonyDuguid/1.00)-->
 [![Join the chat at https://gitter.im/ServerActions/Lobby](https://badges.gitter.im/ServerActions/Lobby.svg)](https://gitter.im/ServerActions/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
