@@ -114,32 +114,32 @@ Namespace Scripts
         Public Function GetLabelText(ByVal control As Office.IRibbonControl) As String
             Try
                 Select Case control.Id.ToString
-                    Case Is = "tabServerActions"
+                    Case "tabServerActions"
                         If Application.ProductVersion.Substring(0, 2) = "15" Then
                             Return My.Application.Info.Title.ToUpper()
                         Else
                             Return My.Application.Info.Title
                         End If
-                    Case Is = "txtCopyright"
+                    Case "txtCopyright"
                         Return "© " & My.Application.Info.Copyright.ToString
-                    Case Is = "txtDescription"
+                    Case "txtDescription"
                         Dim version As String = My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
                         Return My.Application.Info.Title.ToString.Replace("&", "&&") & Space(1) & version
-                    Case Is = "txtReleaseDate"
+                    Case "txtReleaseDate"
                         Return My.Settings.App_ReleaseDate.ToString("dd-MMM-yyyy hh:mm tt")
-                    Case Is = "cboServerName"
+                    Case "cboServerName"
                         Return My.Settings.Ping_ServerName
-                    Case Is = "cboRdgServer"
+                    Case "cboRdgServer"
                         Return My.Settings.Rdg_ServerName
-                    Case Is = "cboPingName"
+                    Case "cboPingName"
                         Return My.Settings.Ping_Results
-                    Case Is = "cboRdgDescription"
+                    Case "cboRdgDescription"
                         Return My.Settings.Rdg_Description
-                    Case Is = "cboRdgComment"
+                    Case "cboRdgComment"
                         Return My.Settings.Rdg_Comment
-                    Case Is = "cboRdgGroup"
+                    Case "cboRdgGroup"
                         Return My.Settings.Rdg_ServerGroup
-                    Case Is = "txtFileName"
+                    Case "txtFileName"
                         Return My.Settings.Rdg_FileName
                 End Select
                 Return String.Empty
@@ -214,15 +214,15 @@ Namespace Scripts
             Try
 
                 Select Case control.Id
-                    Case Is = "cboServerName"
+                    Case "cboServerName"
                         My.Settings.Ping_ServerName = text
-                    Case Is = "cboPingName"
+                    Case "cboPingName"
                         My.Settings.Ping_Results = text
-                    Case Is = "cboRdgServer"
+                    Case "cboRdgServer"
                         My.Settings.Rdg_ServerName = text
-                    Case Is = "cboRdgDescription"
+                    Case "cboRdgDescription"
                         My.Settings.Rdg_Description = text
-                    Case Is = "txtFileName"
+                    Case "txtFileName"
                         My.Settings.Rdg_FileName = text
                 End Select
 
@@ -268,7 +268,7 @@ Namespace Scripts
 
         End Sub
 
-        Public Shared Sub CreateTableFromRange(Optional ByVal FirstCellName As String = "A1", Optional ByVal TableStyleName As String = "TableStyleMedium15")
+        Public Shared Sub FormatTableFromRange(Optional ByVal FirstCellName As String = "A1", Optional ByVal TableStyleName As String = "TableStyleMedium15")
             Dim tbl As Excel.ListObject
             Dim rng As Excel.Range
             Try
@@ -371,7 +371,7 @@ Namespace Scripts
 
         End Sub
 
-        Public Shared Sub UpdateBlankCells()
+        Public Shared Sub UpdateZeroStringToNull()
             Dim tbl As Excel.ListObject = Nothing
             Dim cell As Excel.Range = Nothing
             Dim usedRange As Excel.Range = Nothing

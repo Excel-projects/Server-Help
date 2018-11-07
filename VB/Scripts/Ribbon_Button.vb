@@ -74,23 +74,15 @@ Namespace Scripts
             Dim lstCol As Excel.ListColumn
             Dim tbl As Excel.ListObject
             Dim col As Excel.ListColumn
+            Dim cellServer As Excel.Range
+            Dim cellDesc As Excel.Range
+            Dim Q As String : Q = Chr(34)
             Dim a As Object
             Dim c As Object
             Dim cnt As Integer
             Dim i As Integer
-            Dim colServer As String
-            Dim colDesc As String
-            Dim cellServer As Excel.Range
-            Dim cellDesc As Excel.Range
-            Dim FileName As String
             Dim script As String
-            Dim Q As String
             Try
-                FileName = My.Settings.Rdg_FileName
-                colServer = My.Settings.Rdg_ServerName
-                colDesc = My.Settings.Rdg_Description
-
-                Q = Chr(34)
                 script = "<?xml version=" & Q & "1.0" & Q & " encoding=" & Q & "UTF-8" & Q & "?>"
                 script += vbCrLf & "<RDCMan programVersion=" & Q & "2.7" & Q & " schemaVersion=" & Q & "3" & Q & ">"
                 script += vbCrLf & "<file>"
@@ -106,10 +98,10 @@ Namespace Scripts
                     Exit Try
                 End If
 
-                lstCol = Ribbon.GetItem(tbl.ListColumns, colDesc)
+                lstCol = Ribbon.GetItem(tbl.ListColumns, My.Settings.Rdg_Description)
 
                 For Each col In tbl.ListColumns
-                    If col.Name = colServer Then
+                    If col.Name = My.Settings.Rdg_ServerName Then
                         a = col.DataBodyRange.Value2
                         For i = LBound(a) To UBound(a)
                             c = a(i, 1)
@@ -127,13 +119,14 @@ Namespace Scripts
                         Next
                     End If
                 Next
+
                 script += vbCrLf & "</file>"
                 script += vbCrLf & "<connected />"
                 script += vbCrLf & "<favorites />"
                 script += vbCrLf & "<recentlyUsed />"
                 script += vbCrLf & "</RDCMan>"
 
-                System.IO.File.WriteAllText(FileName, script)
+                System.IO.File.WriteAllText(My.Settings.Rdg_FileName, script)
 
             Catch ex As Exception
                 ErrorHandler.DisplayMessage(ex)
@@ -269,8 +262,8 @@ Namespace Scripts
                 ws.Range(ws.Cells(1, 1), ws.Cells(1, rs.Fields.Count)).Font.Bold = True
                 ws.Range("A2").CopyFromRecordset(rs)
 
-                Ribbon.CreateTableFromRange()
-                Ribbon.UpdateBlankCells()
+                Ribbon.FormatTableFromRange()
+                Ribbon.UpdateZeroStringToNull()
                 Ribbon.FormatDateColumns()
 
                 'create server type column from the first 2 characters of the server name
