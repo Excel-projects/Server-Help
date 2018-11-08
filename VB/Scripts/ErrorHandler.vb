@@ -4,7 +4,6 @@ Option Explicit On
 Imports System.Environment
 Imports System.Windows.Forms
 Imports log4net
-'Imports log4net.Config 'needed if you want to change the path of the log file at runtime
 
 <Assembly: log4net.Config.XmlConfigurator(Watch:=True)>
 
@@ -14,10 +13,6 @@ Namespace Scripts
 
         Private Shared ReadOnly log As ILog = LogManager.GetLogger(GetType(ErrorHandler))
 
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <param name="message"></param>
         Public Shared Sub CreateLogRecord(Optional ByVal message As String = "")
             Try
                 Dim sf As New System.Diagnostics.StackFrame(1)
@@ -31,11 +26,6 @@ Namespace Scripts
 
         End Sub
 
-        ''' <summary>
-        ''' 
-        ''' </summary>
-        ''' <param name="ex"></param>
-        ''' <param name="isSilent"></param>
         Public Shared Sub DisplayMessage(ex As Exception, Optional isSilent As Boolean = False)
             Dim sf As New System.Diagnostics.StackFrame(1)
             Dim caller As System.Reflection.MethodBase = sf.GetMethod()

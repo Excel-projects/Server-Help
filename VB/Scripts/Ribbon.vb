@@ -2,6 +2,7 @@
 Option Explicit On
 
 Imports System.Windows.Forms
+Imports System.Management
 
 Namespace Scripts
 
@@ -177,30 +178,13 @@ Namespace Scripts
         Public Sub OnAction(ByVal control As Office.IRibbonControl)
             Try
                 Select Case control.Id
-                    Case "btnPing"
-                        Ribbon_Button.AddPingColumn()
-
-                    Case "btnCreateRdgFile"
-                        Ribbon_Button.CreateRdgFile()
-
-                    Case "btnDownloadNewVersion"
-                        Ribbon_Button.DownloadNewVersion()
-
-                    Case "btnOpenNewIssue"
-                        Ribbon_Button.OpenNewIssue()
-
-                    Case "btnOpenReadMe"
-                        Ribbon_Button.OpenReadMe()
-
-                    Case "btnSettings"
-                        Ribbon_Button.OpenSettings()
-
-                    Case "btnRefreshCombobox"
-                        Ribbon_Button.RefreshCombobox()
-
-                    Case "btnRefreshServerList"
-                        Ribbon_Button.RefreshServerList()
-
+                    Case "btnPing" : Ribbon_Button.AddPingColumn()
+                    Case "btnCreateRdgFile" : Ribbon_Button.CreateRdgFile()
+                    Case "btnOpenNewIssue" : Ribbon_Button.OpenNewIssue()
+                    Case "btnOpenReadMe" : Ribbon_Button.OpenReadMe()
+                    Case "btnSettings" : Ribbon_Button.OpenSettings()
+                    Case "btnRefreshCombobox" : Ribbon_Button.RefreshCombobox()
+                    Case "btnRefreshServerList" : Ribbon_Button.RefreshServerList()
                 End Select
 
             Catch ex As Exception
@@ -212,20 +196,13 @@ Namespace Scripts
 
         Private Sub OnChange(ByVal control As Office.IRibbonControl, ByRef text As String)
             Try
-
                 Select Case control.Id
-                    Case "cboServerName"
-                        My.Settings.Ping_ServerName = text
-                    Case "cboPingName"
-                        My.Settings.Ping_Results = text
-                    Case "cboRdgServer"
-                        My.Settings.Rdg_ServerName = text
-                    Case "cboRdgDescription"
-                        My.Settings.Rdg_Description = text
-                    Case "txtFileName"
-                        My.Settings.Rdg_FileName = text
+                    Case "cboServerName" : My.Settings.Ping_ServerName = text
+                    Case "cboPingName" : My.Settings.Ping_Results = text
+                    Case "cboRdgServer" : My.Settings.Rdg_ServerName = text
+                    Case "cboRdgDescription" : My.Settings.Rdg_Description = text
+                    Case "txtFileName" : My.Settings.Rdg_FileName = text
                 End Select
-
 
             Catch ex As Exception
                 ErrorHandler.DisplayMessage(ex)
@@ -247,9 +224,8 @@ Namespace Scripts
         End Function
 
         Public Shared Sub ClearSheetContents()
-            Dim wb As Excel.Workbook = Globals.ThisAddIn.Application.ActiveWorkbook
-            Dim ws As Excel.Worksheet = wb.ActiveSheet
             Try
+                Dim ws As Excel.Worksheet = CType(Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet, Excel.Worksheet)
                 ws.Cells.Clear() 'To clear only content (no formats) use;
                 ws.Cells.ClearContents() 'To Clear only formats use;
                 ws.Cells.ClearFormats() 'To clear only cell comments use
@@ -261,25 +237,19 @@ Namespace Scripts
             Catch ex As Exception
                 ErrorHandler.DisplayMessage(ex)
 
-            Finally
-                ws = Nothing
-
             End Try
 
         End Sub
 
         Public Shared Sub FormatTableFromRange(Optional ByVal FirstCellName As String = "A1", Optional ByVal TableStyleName As String = "TableStyleMedium15")
-            Dim tbl As Excel.ListObject
-            Dim rng As Excel.Range
             Try
-                rng = Globals.ThisAddIn.Application.ActiveSheet.Range(Globals.ThisAddIn.Application.ActiveSheet.Range(FirstCellName), Globals.ThisAddIn.Application.ActiveSheet.Range(FirstCellName).SpecialCells(Excel.Constants.xlLastCell))
-                tbl = Globals.ThisAddIn.Application.ActiveSheet.ListObjects.Add(Excel.XlListObjectSourceType.xlSrcRange, rng, , Excel.XlYesNoGuess.xlYes)
+                Dim rng As Excel.Range = Globals.ThisAddIn.Application.ActiveSheet.Range(Globals.ThisAddIn.Application.ActiveSheet.Range(FirstCellName), Globals.ThisAddIn.Application.ActiveSheet.Range(FirstCellName).SpecialCells(Excel.Constants.xlLastCell))
+                Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveSheet.ListObjects.Add(Excel.XlListObjectSourceType.xlSrcRange, rng, , Excel.XlYesNoGuess.xlYes)
                 tbl.TableStyle = TableStyleName
                 tbl.Name = My.Settings.Rdg_SheetName
                 Globals.ThisAddIn.Application.Columns.AutoFit()
 
-                Dim r As Excel.Range
-                r = Globals.ThisAddIn.Application.ActiveCell
+                Dim r As Excel.Range = Globals.ThisAddIn.Application.ActiveCell
                 Globals.ThisAddIn.Application.ActiveSheet.Range("C2").Select
                 With Globals.ThisAddIn.Application.ActiveWindow
                     .FreezePanes = False
@@ -293,68 +263,66 @@ Namespace Scripts
             Catch ex As Exception
                 ErrorHandler.DisplayMessage(ex)
 
-            Finally
-                tbl = Nothing
-                rng = Nothing
-
             End Try
 
         End Sub
 
-        Public Shared Function GetPingResult(hostName As String) As String
-            Dim ping As Object
-            Dim status As Object
-            Dim result As String = String.Empty
+        Public Shared Function GetPingResult(ByVal hostName As String) As String
+            Dim resultText As String = String.Empty
             Dim dateFormat As String = "dd-MMM-yyyy HH:mm:ss"
-            Try
-                ping = GetObject("winmgmts:{impersonationLevel=impersonate}").ExecQuery("Select * from Win32_PingStatus Where Address = '" & hostName & "'")
 
-                For Each status In ping
-                    Select Case status.StatusCode
-                        Case 0 : result = "Connected"
-                        Case 11001 : result = "Buffer too small"
-                        Case 11002 : result = "Destination net unreachable"
-                        Case 11003 : result = "Destination host unreachable"
-                        Case 11004 : result = "Destination protocol unreachable"
-                        Case 11005 : result = "Destination port unreachable"
-                        Case 11006 : result = "No resources"
-                        Case 11007 : result = "Bad option"
-                        Case 11008 : result = "Hardware error"
-                        Case 11009 : result = "Packet too big"
-                        Case 11010 : result = "Request timed out"
-                        Case 11011 : result = "Bad request"
-                        Case 11012 : result = "Bad route"
-                        Case 11013 : result = "Time-To-Live (TTL) expired transit"
-                        Case 11014 : result = "Time-To-Live (TTL) expired reassembly"
-                        Case 11015 : result = "Parameter problem"
-                        Case 11016 : result = "Source quench"
-                        Case 11017 : result = "Option too big"
-                        Case 11018 : result = "Bad destination"
-                        Case 11032 : result = "Negotiating IPSEC"
-                        Case 11050 : result = "General failure"
-                        Case Else : result = "Unknown host"
-                    End Select
+            Try
+                Dim query As SelectQuery = New SelectQuery("Win32_PingStatus", "Address='" & hostName & "'")
+                Dim searcher As ManagementObjectSearcher = New ManagementObjectSearcher(query)
+
+                For Each result As ManagementObject In searcher.[Get]()
+                    If result("StatusCode") IsNot Nothing Then
+                        Select Case CType(result("StatusCode"), UInt32)
+                            Case 0 : resultText = "Connected"
+                            Case 11001 : resultText = "Buffer too small"
+                            Case 11002 : resultText = "Destination net unreachable"
+                            Case 11003 : resultText = "Destination host unreachable"
+                            Case 11004 : resultText = "Destination protocol unreachable"
+                            Case 11005 : resultText = "Destination port unreachable"
+                            Case 11006 : resultText = "No resources"
+                            Case 11007 : resultText = "Bad option"
+                            Case 11008 : resultText = "Hardware error"
+                            Case 11009 : resultText = "Packet too big"
+                            Case 11011 : resultText = "Bad request"
+                            Case 11012 : resultText = "Bad route"
+                            Case 11013 : resultText = "Time-To-Live (TTL) expired transit"
+                            Case 11014 : resultText = "Time-To-Live (TTL) expired reassembly"
+                            Case 11015 : resultText = "Parameter problem"
+                            Case 11016 : resultText = "Source quench"
+                            Case 11017 : resultText = "Option too big"
+                            Case 11018 : resultText = "Bad destination"
+                            Case 11032 : resultText = "Negotiating IPSEC"
+                            Case 11050 : resultText = "General failure"
+                            Case Else : resultText = "Unknown host"
+                        End Select
+
+                    Else
+                        resultText = "Unknown host"
+
+                    End If
                 Next
-                Return result & " : " & Format(Now(), dateFormat)
+
+                Return resultText & " : " & DateTime.Now.ToString(dateFormat)
 
             Catch ex As Exception
                 ErrorHandler.DisplayMessage(ex)
                 Return "Error: " & ex.ToString()
-
-            Finally
-                ping = Nothing
-                status = Nothing
 
             End Try
 
         End Function
 
         Public Shared Sub OpenFile(ByVal fileName As String)
-            Dim pStart As New System.Diagnostics.Process
+            Dim myProcess As New System.Diagnostics.Process
             Try
                 If fileName = String.Empty Then Exit Try
-                pStart.StartInfo.FileName = fileName
-                pStart.Start()
+                myProcess.StartInfo.FileName = fileName
+                myProcess.Start()
 
             Catch ex As System.ComponentModel.Win32Exception
                 'MessageBox.Show("No application is assicated to this file type." & vbCrLf & vbCrLf & pstrFile, "No action taken.", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -365,43 +333,35 @@ Namespace Scripts
                 Exit Try
 
             Finally
-                pStart.Dispose()
+                myProcess.Dispose()
 
             End Try
 
         End Sub
 
         Public Shared Sub UpdateZeroStringToNull()
-            Dim tbl As Excel.ListObject = Nothing
-            Dim cell As Excel.Range = Nothing
-            Dim usedRange As Excel.Range = Nothing
             Try
-                If ErrorHandler.IsAvailable(True) = False Then
-                    Return
-                End If
-                tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject
-                cell = Nothing
-                Dim cnt As Integer = 0
-                Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
-                usedRange = tbl.Range
-                Dim n As Integer = tbl.ListColumns.Count
-                Dim m As Integer = tbl.ListRows.Count
-                For i As Integer = 0 To m
-                    For j As Integer = 1 To n
-                        If usedRange(i + 1, j).Value2 Is Nothing Then
-                            cell = tbl.Range.Cells(i + 1, j)
-                            cell.Value = "NULL"
-                            cnt = cnt + 1
-                        End If
+                If ErrorHandler.IsAvailable(True) Then
+                    Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
+                    Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveCell.ListObject
+                    Dim usedRange As Excel.Range = tbl.Range
+
+                    For r As Integer = 0 To tbl.ListRows.Count
+                        For c As Integer = 1 To tbl.ListColumns.Count
+                            If usedRange(r + 1, c).Value2 Is Nothing Then
+                                Dim cell As Excel.Range = tbl.Range.Cells(r + 1, c)
+                                cell.Value = "NULL"
+                            End If
+                        Next
                     Next
-                Next
+
+                End If
 
             Catch ex As Exception
                 ErrorHandler.DisplayMessage(ex)
 
             Finally
-                tbl = Nothing
-                cell = Nothing
+                Cursor.Current = System.Windows.Forms.Cursors.Arrow
 
             End Try
 
@@ -432,26 +392,25 @@ Namespace Scripts
         End Function
 
         Public Shared Sub FormatDateColumns()
-            Dim tbl As Excel.ListObject = Nothing
-            Dim cell As Excel.Range = Nothing
             Dim dateFormat As String = "dd-MMM-yyyy HH:mm:ss"
             Try
-                If ErrorHandler.IsAvailable(True) = False Then
-                    Return
-                End If
-                ErrorHandler.CreateLogRecord()
-                tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject
-                cell = Nothing
-                Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
-                For Each col As Excel.ListColumn In tbl.ListColumns
-                    cell = FirstNotNullCellInColumn(col.DataBodyRange)
-                    If ((cell IsNot Nothing)) Then
-                        If ErrorHandler.IsDate(cell.Value) Then
-                            col.DataBodyRange.NumberFormat = dateFormat
-                            col.DataBodyRange.HorizontalAlignment = Excel.Constants.xlCenter
+                If ErrorHandler.IsAvailable(True) Then
+                    Cursor.Current = System.Windows.Forms.Cursors.WaitCursor
+                    ErrorHandler.CreateLogRecord()
+                    Dim tbl As Excel.ListObject = Globals.ThisAddIn.Application.ActiveCell.ListObject
+                    Dim cell As Excel.Range = Nothing
+
+                    For Each col As Excel.ListColumn In tbl.ListColumns
+                        cell = FirstNotNullCellInColumn(col.DataBodyRange)
+                        If ((cell IsNot Nothing)) Then
+                            If ErrorHandler.IsDate(cell.Value) Then
+                                col.DataBodyRange.NumberFormat = dateFormat
+                                col.DataBodyRange.HorizontalAlignment = Excel.Constants.xlCenter
+                            End If
                         End If
-                    End If
-                Next
+                    Next
+
+                End If
 
             Catch ex As System.Runtime.InteropServices.COMException
                 ErrorHandler.DisplayMessage(ex)
@@ -461,12 +420,7 @@ Namespace Scripts
 
             Finally
                 Cursor.Current = System.Windows.Forms.Cursors.Arrow
-                If tbl IsNot Nothing Then
-                    'Marshal.ReleaseComObject(tbl)
-                End If
-                If cell IsNot Nothing Then
-                    'Marshal.ReleaseComObject(cell)
-                End If
+
             End Try
 
         End Sub

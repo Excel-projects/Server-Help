@@ -366,25 +366,33 @@ namespace ServerActions.Scripts
         {
             try
             {
+                Excel.ListColumn colResults;
+
                 if (ErrorHandler.IsValidListObject())
                 {
                     Excel.ListObject tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject;
-                    Excel.ListColumn colResults = tbl.ListColumns[tbl.Range.Columns.Count];
-                    if (colResults.Name != Properties.Settings.Default.Ping_Results)
+
+                    if (ErrorHandler.IsValidListColumn(tbl, Properties.Settings.Default.Ping_Results))
+                    {
+                        colResults = tbl.ListColumns[Properties.Settings.Default.Ping_Results];
+                    }
+                    else
                     {
                         colResults = tbl.ListColumns.Add();
                         colResults.Name = Properties.Settings.Default.Ping_Results;
                     }
-
-                    Excel.ListColumn colServer = tbl.ListColumns[Properties.Settings.Default.Ping_ServerName];
-
-                    for (int i = 1; i <= tbl.ListRows.Count; i++)
+                    
+                    if (ErrorHandler.IsValidListColumn(tbl, Properties.Settings.Default.Ping_ServerName))
                     {
-                        if (colServer.DataBodyRange.Rows[i].EntireRow.Hidden == false)
+                        Excel.ListColumn colServer = tbl.ListColumns[Properties.Settings.Default.Ping_ServerName];
+                        for (int r = 1; r <= tbl.ListRows.Count; r++)
                         {
-                            Excel.Range cellResult = colResults.DataBodyRange.Cells[1].Offset(i - 1, 0);
-                            Excel.Range cellServer = colServer.DataBodyRange.Cells[1].Offset(i - 1, 0);
-                            cellResult.Value = Ribbon.GetPingResult(cellServer.Value);
+                            if (colServer.DataBodyRange.Rows[r].EntireRow.Hidden == false)
+                            {
+                                Excel.Range cellResult = colResults.DataBodyRange.Cells[1].Offset(r - 1, 0);
+                                Excel.Range cellServer = colServer.DataBodyRange.Cells[1].Offset(r - 1, 0);
+                                cellResult.Value = Ribbon.GetPingResult(cellServer.Value.ToString());
+                            }
                         }
                     }
 
@@ -399,48 +407,72 @@ namespace ServerActions.Scripts
 
         public void CreateRdgFile()
         {
-            string vbCrLf = string.Empty;
-            string Q = ((char)34).ToString();
-
             try
             {
+                string quote = ((char)34).ToString();
+                string previousGroup = string.Empty;
+                string currentGroup = string.Empty;
                 if (ErrorHandler.IsValidListObject())
                 {
-                    string script = "<?xml version=" + Q + "1.0" + Q + " encoding=" + Q + "UTF-8" + Q + "?>";
-                    script += vbCrLf + "<RDCMan programVersion=" + Q + "2.7" + Q + " schemaVersion=" + Q + "3" + Q + ">";
-                    script += vbCrLf + "<file>";
-                    script += vbCrLf + "<credentialsProfiles />";
-                    script += vbCrLf + "<properties>";
-                    script += vbCrLf + "<expanded>True</expanded>";
-                    script += vbCrLf + "<name>" + Scripts.AssemblyInfo.Title + "</name>";
-                    script += vbCrLf + "</properties>";
+                    var script = new StringBuilder()
+                        .AppendLine("<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "UTF-8" + quote + "?>")
+                        .AppendLine("<RDCMan programVersion=" + quote + "2.7" + quote + " schemaVersion=" + quote + "3" + quote + ">")
+                        .AppendLine("<file>")
+                        .AppendLine("<credentialsProfiles />")
+                        .AppendLine("<properties>")
+                        .AppendLine("<expanded>True</expanded>")
+                        .AppendLine("<name>" + Scripts.AssemblyInfo.Title + "</name>")
+                        .AppendLine("</properties>");
 
                     Excel.ListObject tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject;
-                    Excel.ListColumn colDesc = tbl.ListColumns[Properties.Settings.Default.Rdg_Description];
                     Excel.ListColumn colServer = tbl.ListColumns[Properties.Settings.Default.Rdg_ServerName];
+                    Excel.ListColumn colDesc = tbl.ListColumns[Properties.Settings.Default.Rdg_Description];
+                    Excel.ListColumn colComment = tbl.ListColumns[Properties.Settings.Default.Rdg_Comment];
+                    Excel.ListColumn colServerGroup = tbl.ListColumns[Properties.Settings.Default.Rdg_ServerGroup];
 
-                    for (int i = 1; i <= tbl.ListRows.Count; i++)
+                    for (int r = 1; r <= tbl.ListRows.Count; r++)
                     {
-                        if (colServer.DataBodyRange.Rows[i].EntireRow.Hidden == false)
+                        if (colServer.DataBodyRange.Rows[r].EntireRow.Hidden == false)
                         {
-                            Excel.Range cellDesc = colDesc.DataBodyRange.Cells[1].Offset(i - 1, 0);
-                            Excel.Range cellServer = colServer.DataBodyRange.Cells[1].Offset(i - 1, 0);
-                            script += vbCrLf + "<server>";
-                            script += vbCrLf + "<properties>";
-                            script += vbCrLf + "<displayName>" + cellServer.Value + " (" + cellDesc.Value + ")</displayName>";
-                            script += vbCrLf + "<name>" + cellServer.Value + "</name>";
-                            script += vbCrLf + "</properties>";
-                            script += vbCrLf + "</server>";
+                            Excel.Range cellServer = colServer.DataBodyRange.Cells[1].Offset(r - 1, 0);
+                            Excel.Range cellDesc = colDesc.DataBodyRange.Cells[1].Offset(r - 1, 0);
+                            Excel.Range cellComment = colComment.DataBodyRange.Cells[1].Offset(r - 1, 0);
+                            Excel.Range cellServerGroup = colServerGroup.DataBodyRange.Cells[1].Offset(r - 1, 0);
+                            currentGroup = cellServerGroup.Value;
+
+                            if (currentGroup != previousGroup)
+                            {
+                                script.AppendLine("<group>");
+                                script.AppendLine("<properties>");
+                                script.AppendLine("<expanded>True</expanded>");
+                                script.AppendLine("<name>" + currentGroup + "</name>");
+                                script.AppendLine("</properties>");
+                            }
+
+                            script.AppendLine("<server>");
+                            script.AppendLine("<properties>");
+                            script.AppendLine("<name>" + cellServer.Value + "</name>");
+                            script.AppendLine("<displayName>" + cellServer.Value + " (" + cellDesc.Value + ")</displayName>");
+                            script.AppendLine("<comment>" & cellComment.Value & "</comment>");
+                            script.AppendLine("</properties>");
+                            script.AppendLine("</server>");
+
+                            if (currentGroup != colServerGroup.DataBodyRange.Cells[1].Offset(r, 0))
+                            {
+                                script.AppendLine("</group>");
+                            }
+
                         }
+                        previousGroup = currentGroup;
                     }
 
-                    script += vbCrLf + "</file>";
-                    script += vbCrLf + "<connected />";
-                    script += vbCrLf + "<favorites />";
-                    script += vbCrLf + "<recentlyUsed />";
-                    script += vbCrLf + "</RDCMan>";
+                    script.AppendLine("</file>");
+                    script.AppendLine("<connected />");
+                    script.AppendLine("<favorites />");
+                    script.AppendLine("<recentlyUsed />");
+                    script.AppendLine("</RDCMan>");
 
-                    System.IO.File.WriteAllText(Properties.Settings.Default.Rdg_FileName, script);
+                    System.IO.File.WriteAllText(Properties.Settings.Default.Rdg_FileName, script.ToString());
 
                 }
             }
@@ -480,7 +512,7 @@ namespace ServerActions.Scripts
                 //    string msg = "The sheet named '" & My.Settings.Rdg_SheetName & "' does not exist."
                 //    msg = msg & vbCrLf & "Would you like to use the current sheet?"
                 //    answer = MsgBox(msg, vbYesNo + vbQuestion, "Sheet Not Found")
-                //    'MessageBox.Show(msg, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
+                //  'MessageBox.Show(msg, "Unexpected Error", MessageBoxButtons.OK, MessageBoxIcon.[Error])
                 //    If answer = vbYes Then
                 //        ws = wb.ActiveSheet
                 //        My.Settings.Rdg_SheetName = wb.ActiveSheet.Name
@@ -488,8 +520,8 @@ namespace ServerActions.Scripts
                 //        Exit Try
                 //    End If
                 //Else
-                //ws = Globals.ThisAddIn.Application.ActiveWorkbook.Worksheets[Properties.Settings.Default.Rdg_SheetName];
-                ws = Globals.ThisAddIn.Application.ActiveWorkbook.ActiveSheet;
+                //ws = wb.Worksheets[Properties.Settings.Default.Rdg_SheetName];
+                ws = wb.ActiveSheet;
                 //End If
 
                 ws.Activate();
@@ -502,7 +534,8 @@ namespace ServerActions.Scripts
                 ws.Range["A2"].CopyFromRecordset(rs);
 
                 Ribbon.FormatTableFromRange();
-                Ribbon.UpdateZeroStringToNull();
+                Excel.ListObject tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject;
+                Ribbon.UpdateZeroStringToNull(tbl);
                 Ribbon.FormatDateColumns();
 
                 //'create server type column from the first 2 characters of the server name
@@ -529,7 +562,6 @@ namespace ServerActions.Scripts
                 if (ErrorHandler.IsValidListObject())
                 {
                     ribbon.Invalidate();
-                    ribbon.InvalidateControl("ID1");
                 }
 
             }
@@ -853,31 +885,28 @@ namespace ServerActions.Scripts
         /// Change zero string cell values to string "NULL"
         /// </summary>
         /// <remarks></remarks>
-        public static void UpdateZeroStringToNull()
+        public static void UpdateZeroStringToNull(Excel.ListObject tbl)
         {
-            Excel.ListObject tbl = null;
-            Excel.Range cell = null;
-            Excel.Range usedRange = null;
             try
             {
                 if (ErrorHandler.IsAvailable(true) == false)
                 {
                     return;
                 }
-                ErrorHandler.CreateLogRecord();
-                tbl = Globals.ThisAddIn.Application.ActiveCell.ListObject;
-                cell = default(Excel.Range);
+
                 Cursor.Current = System.Windows.Forms.Cursors.WaitCursor;
-                usedRange = tbl.Range;
-                int n = tbl.ListColumns.Count;
-                int m = tbl.ListRows.Count;
-                for (int i = 0; i <= m; i++) // by row
+                ErrorHandler.CreateLogRecord();
+
+                Excel.Range cell = default(Excel.Range);
+                Excel.Range usedRange = tbl.Range;
+
+                for (int r = 0; r <= tbl.ListRows.Count; r++) 
                 {
-                    for (int j = 1; j <= n; j++) // by column
+                    for (int c = 1; c <= tbl.ListColumns.Count; c++)
                     {
-                        if (usedRange[i + 1, j].Value2 == null)
+                        if (usedRange[r + 1, c].Value2 == null)
                         {
-                            cell = tbl.Range.Cells[i + 1, j];
+                            cell = tbl.Range.Cells[r + 1, c];
                             cell.Value = "NULL";
                         }
                     }
@@ -887,16 +916,7 @@ namespace ServerActions.Scripts
             {
                 ErrorHandler.DisplayMessage(ex);
             }
-            finally
-            {
-                Cursor.Current = System.Windows.Forms.Cursors.Arrow;
-                if (tbl != null)
-                    Marshal.ReleaseComObject(tbl);
-                if (cell != null)
-                    Marshal.ReleaseComObject(cell);
-                if (usedRange != null)
-                    Marshal.ReleaseComObject(usedRange);
-            }
+
         }
 
         #endregion

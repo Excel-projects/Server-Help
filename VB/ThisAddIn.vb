@@ -1,4 +1,7 @@
-﻿Imports ServerActions.Scripts
+﻿Option Strict On
+Option Explicit On
+
+Imports ServerActions.Scripts
 
 Public Class ThisAddIn
 

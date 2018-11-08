@@ -223,6 +223,27 @@ namespace ServerActions.Scripts
         }
 
         /// <summary>
+        /// Check to see if there is a column in the table
+        /// </summary>
+        /// <param name="tbl"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
+        public static bool IsValidListColumn(Excel.ListObject tbl, string columnName)
+        {
+            try
+            {
+                Excel.ListColumn col = tbl.ListColumns[columnName];
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+
+        }
+
+        /// <summary>
         /// This method check whether Excel is in Cell Editing mode or not
         /// There are few ways to check this (eg. check to see if a standard menu item is disabled etc.)
         /// I know in cell editing mode app.DisplayAlerts throws an Exception, so here I'm relying on that behaviour
