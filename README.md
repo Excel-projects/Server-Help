@@ -2,7 +2,7 @@
 <head>
 </head>
 
-<img align="left" src="Images/ReadMe/header6.png">
+<img align="left" src="Images/ReadMe/header.png">
 
 This Add-In allows the user to ping a list of servers and creates a file for [Microsoft Remote Desktop Manager](https://www.microsoft.com/en-au/download/details.aspx?id=44989) from an Excel table. This is used for quickly determining which servers are offline in a list.
 
@@ -15,7 +15,7 @@ This Add-In allows the user to ping a list of servers and creates a file for [Mi
 <!--[![Github All Releases](https://img.shields.io/github/downloads/Excel-projects/Server-Help/total.svg)](https://github.com/Excel-projects/Server-Help/releases)-->
 
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Excel-projects/Server-Help/master/Images/ReadMe/ribbon.example.gif?" alt="vbaping" />
+  <img src="Images/ReadMe/excel.ribbon.gif" />
 </h1>
 
 ## Table of Contents
